@@ -18,20 +18,20 @@ glimpse(players_raw)
 players_clean <- players_raw %>%
   #rename columns to clear, consistent names
   rename(
-    rank                = `Â`,               #strange character -> ranking
-    player_id           = `Player ID`,
-    player_name         = `Player Name`,
-    total_overall       = `Total (Overall)`,
+    rank = `Â`,           
+    player_id = `Player ID`,
+    player_name = `Player Name`,
+    total_overall = `Total (Overall)`,
     highest_paying_game = `Highest Paying Game`,
-    total_game          = `Total (Game)`,
-    pct_of_total        = `% of Total`
+    total_game = `Total (Game)`,
+    pct_of_total = `% of Total`
   ) %>%
   #convert strings with $, commas, % into numeric
   mutate(
-    rank               = as.integer(rank),
-    total_overall_usd  = parse_number(total_overall),
-    total_game_usd     = parse_number(total_game),
-    pct_of_total_num   = parse_number(pct_of_total)  # 0–100 scale
+    rank= as.integer(rank),
+    total_overall_usd = parse_number(total_overall),
+    total_game_usd= parse_number(total_game),
+    pct_of_total_num = parse_number(pct_of_total)  # 0–100 scale
   ) %>%
   #keep only the columns we really need for analysis
   select(
