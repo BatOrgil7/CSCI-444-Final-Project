@@ -14,7 +14,9 @@ This part of the project focuses on **esports players and games**:
   `https://www.esportsearnings.com/players/highest-earnings`.
 - Combined this with two Kaggle-based esports datasets:
   - Player / team age and experience  
-  - Game-level earnings and release years
+    - *(Kaggle)*: [Esports team performance dataset](PASTE_KAGGLE_LINK_HERE_1)
+  - Game-level earnings and release years  
+    - *(Kaggle)*: [General esports games dataset](PASTE_KAGGLE_LINK_HERE_2)
 - Cleaned all data using **tidyverse** and saved to `data/` as:
   - `esports_players_top1000_clean.csv`
   - `esports_team_performance_clean.csv`
@@ -22,14 +24,9 @@ This part of the project focuses on **esports players and games**:
 
 Main questions answered in the Quarto report:
 
-1. **Age & experience:**  
-   What does the age and experience distribution of esports professionals look like?
-
-2. **Game age & prize money:**  
-   Do older esports titles tend to generate more total prize money?
-
-3. **Concentration of earnings:**  
-   Which games dominate the income of the top 1000 players?
+1. **Age & experience** – What does the age and experience distribution of esports professionals look like?  
+2. **Game age & prize money** – Do older esports titles tend to generate more total prize money?  
+3. **Concentration of earnings** – Which games dominate the income of the top 1000 players?
 
 All analysis, visualisations, and narrative for the esports section are in:
 
