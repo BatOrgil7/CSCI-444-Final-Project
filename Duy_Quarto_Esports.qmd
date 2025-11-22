@@ -411,3 +411,274 @@ Across my three questions, the esports data paints a consistent picture:
    Among the top 1000 earners, prize money is heavily concentrated in a short list of games and a small group of players. Almost all of the biggest earners rely on one primary game for the majority of their income.
 
 These results show that esports careers offer high potential rewards but also significant risk and a limited time window. In the full Group 9 report, my esports findings will be compared with the software‑engineer sections to understand how these patterns differ from more traditional technical careers in terms of income stability, career length, and long‑term opportunities.
+
+---
+title: "Final Project - Software Engineer Salary Section"
+author: "Bat-Orgil Erdenebat"
+format:
+  html:
+    code-fold: true
+    code-summary: "Show code"
+    toc: true
+    toc-depth: 2
+  pdf:
+    code-fold: true
+    code-summary: "Show code"
+execute:
+  echo: true
+  warning: false
+  message: false
+---
+
+# Software engineer salary section - Bat-Orgil Erdenebat
+
+In our group project we compare the financial realities of two careers: professional esports and software engineering. My part focuses on the software engineer side. I use salary data for software developers in the United States to understand how pay is distributed and how concentrated the top earnings are.
+
+My section is built around three related questions:
+
+1. **Q1. How do median software engineer salaries vary across states in the United States.**
+2. **Q2. How much of the total median salary mass is concentrated in the highest paying states.**
+3. **Q3. What geographic patterns appear in software engineer pay levels, and how do different percentiles compare across states.**
+
+These questions together help answer the group level question about how realistic and stable software engineer earnings are compared to the very concentrated prize money at the top of esports.
+
+## Data and setup for software engineer salaries
+
+In this project the salary data was scraped from O*NET and stored as `data/software_salaries_html_tables.csv`. In this section I read that data, clean the salary columns, and create a statewide summary that will be reused in all visualizations.
+
+```{r}
+# Q0: load libraries for software engineer salary analysis
+# Question context: This chunk supports Q1, Q2, and Q3 by loading required packages.
+
+library(tidyverse)
+library(kableExtra)
+library(scales)
+library(usmap)
+library(leaflet)
+library(maps)
+```
+
+```{r}
+# Q0: read and clean software engineer salary data for all states
+# Question context: Prepare a clean statewide salary table that is used in Q1, Q2, and Q3.
+
+salaries_raw <- read_csv(
+  "data/software_salaries_html_tables.csv",
+  show_col_types = FALSE
+)
+
+cleaned_salaries <- salaries_raw %>%
+  mutate(
+    P10    = parse_number(`Annual Low (10%)`),
+    P25    = parse_number(`Annual QL (25%)`),
+    Median = parse_number(`Annual Median (50%)`),
+    P75    = parse_number(`Annual QU (75%)`),
+    P90    = parse_number(`Annual High (90%)`),
+    Location      = str_trim(Location),
+    Location_Type = case_when(
+      Location == "United States" ~ "National",
+      Location == State_Name      ~ "Statewide",
+      str_detect(Location, regex("nonmetropolitan", ignore_case = TRUE)) ~ "Non-metropolitan",
+      TRUE                        ~ "Metropolitan"
+    )
+  ) %>%
+  select(
+    Location, Location_Type,
+    State, State_Name,
+    P10, P25, Median, P75, P90
+  )
+
+statewide_summary <- cleaned_salaries %>%
+  filter(Location_Type == "Statewide") %>%
+  mutate(
+    state = State  
+  ) %>%
+  select(
+    state,         
+    State,          
+    State_Name,
+    P10, P25, Median, P75, P90
+  ) %>%
+  arrange(desc(Median))
+
+head(statewide_summary)
+```
+
+This cleaning step converts salary percentiles to numeric values, classifies each record by location type, and produces a table with one row per state. The object `statewide_summary` is used in all three of my questions and in every visualization below.
+
+---
+
+## Question 1 - How do median salaries vary across states
+
+**Q1. How do median software engineer salaries vary across states in the United States.**
+
+In this question I focus on how median salary levels differ from state to state. I use a bar chart to show the full distribution of medians across all states.
+
+### Q1 visualization - Bar chart of median salary by state
+
+```{r}
+# Q1: bar chart of median software engineer salary by state
+# Question 1: How do median salaries vary across states.
+
+median_bar_plot <- statewide_summary %>%
+  ggplot(aes(x = reorder(State_Name, Median), y = Median)) +
+  geom_col() +
+  coord_flip() +
+  labs(
+    title    = "Median software engineer salary by state",
+    subtitle = "Statewide estimates from O*NET Online",
+    x        = "State",
+    y        = "Median salary (USD)"
+  ) +
+  scale_y_continuous(labels = dollar) +
+  theme_minimal()
+
+median_bar_plot
+```
+
+### Q1 narrative and conclusion
+
+The bar chart shows that some states clearly pay more than others, but most states are in the same general range rather than being extremely low or extremely high. The ranking starts with states such as California and Washington near the top and moves down to lower paying states, but there is a smooth gradient instead of one or two extreme outliers. This suggests that software engineer salaries in the United States are spread across many states with reasonably strong median pay, rather than being limited to only one or two locations.
+
+---
+
+## Question 2 - How concentrated is income among the highest paying states
+
+**Q2. How much of the total median salary mass is concentrated in the highest paying states.**
+
+In this question I study how much of the overall median salary is accounted for by the top states. I create a four pipe dplyr pipeline that ranks states by median salary and computes each state s share and cumulative share of the total.
+
+### Q2 wrangling - Four pipe concentration pipeline
+
+```{r}
+# Q2: compute rank and cumulative share of total median salary by state
+# Question 2: How much of the total median salary mass is concentrated in the top states.
+# This pipeline uses four different dplyr verbs: filter, arrange, mutate, and select.
+
+salary_concentration <- statewide_summary %>%
+  filter(!is.na(Median)) %>%
+  arrange(desc(Median)) %>%
+  mutate(
+    rank      = row_number(),
+    share     = Median / sum(Median),
+    cum_share = cumsum(share)
+  ) %>%
+  select(State, State_Name, Median, rank, share, cum_share)
+
+head(salary_concentration)
+```
+
+### Q2 visualization - kableExtra table of top states and their share
+
+```{r}
+# Q2: kableExtra table of top 10 states by median salary and income share
+# Question 2: Show how much of the total median salary is concentrated in the highest paying states.
+
+salary_concentration %>%
+  mutate(
+    `Median salary (USD)` = dollar(Median),
+    `Share of total`      = percent(share, accuracy = 0.1),
+    `Cumulative share`    = percent(cum_share, accuracy = 0.1)
+  ) %>%
+  select(
+    Rank = rank,
+    State,
+    State_Name,
+    `Median salary (USD)`,
+    `Share of total`,
+    `Cumulative share`
+  ) %>%
+  slice(1:10) %>%
+  kable(
+    format  = "html",
+    caption = "Top 10 states by median software engineer salary and share of total median pay",
+    align   = "c"
+  ) %>%
+  kable_styling(
+    full_width        = FALSE,
+    bootstrap_options = c("striped", "hover", "condensed")
+  ) %>%
+  row_spec(0, bold = TRUE)
+```
+
+### Q2 narrative and conclusion
+
+From this table we see that the highest paying states do not capture an extreme share of the total median salary mass. The cumulative share grows gradually: even after the top ten states, the cumulative share is still well below a majority of the total. This means that there is not a tiny group of states hoarding most of the earning power. For a student, this supports the idea that software engineering is a broadly accessible high paying career, rather than one where only a few locations provide serious income.
+
+---
+
+## Question 3 - What geographic patterns appear in pay levels and percentiles
+
+**Q3. What geographic patterns appear in software engineer pay levels, and how do different percentiles compare across states.**
+
+In this question I look at how salaries vary across the map and how the lower and upper percentiles compare to the median. I use both a static US map and an interactive Leaflet widget to explore the geographic patterns.
+
+### Q3 visualization 1 - US map of median salary by state
+
+```{r}
+# Q3: US map of median software engineer salary by state
+# Question 3: What geographic patterns appear in software engineer pay levels.
+
+us_salary_map <- plot_usmap(
+  data    = statewide_summary,
+  values  = "Median",
+  regions = "states"
+) +
+  scale_fill_continuous(
+    name  = "Median salary",
+    label = dollar_format()
+  ) +
+  labs(
+    title    = "Median software engineer salary by state",
+    subtitle = "Statewide salary estimates from O*NET Online"
+  ) +
+  theme(legend.position = "right")
+
+us_salary_map
+```
+
+### Q3 visualization 2 - Leaflet map with custom markers
+
+```{r}
+# Q3: Leaflet map of software engineer salaries with custom markers
+# Question 3: How do different salary percentiles compare across states in a geographic view.
+
+state_centers <- as.data.frame(state.center) %>%
+  mutate(State_Name = state.name)
+
+leaflet_data <- statewide_summary %>%
+  left_join(state_centers, by = "State_Name")
+
+leaflet(leaflet_data) %>%
+  addProviderTiles(providers$CartoDB.Positron) %>%
+  addAwesomeMarkers(
+    lng  = ~x,
+    lat  = ~y,
+    icon = awesomeIcons(
+      icon        = "briefcase",
+      iconColor   = "white",
+      markerColor = "blue",
+      library     = "fa"
+    ),
+    popup = ~paste0(
+      "<strong>", State_Name, "</strong><br>",
+      "Median salary: ", dollar(Median), "<br>",
+      "P10: ", dollar(P10), "<br>",
+      "P90: ", dollar(P90)
+    )
+  )
+```
+
+### Q3 narrative and conclusion
+
+The US map highlights clear regional patterns in median salaries. Some coastal and technology heavy states have higher median pay, while several interior states have lower values. However, high pay is not limited to one small region. Many states across the country show strong median salaries, which means there are diverse geographic options for a good software engineer income.
+
+The Leaflet map adds more detail by showing the tenth and ninetieth percentile salaries in each state. In most places the P10 and P90 values are within a reasonable distance of the median, which means the spread of income inside each state is significant but not wildly extreme. This contrasts with esports prize earnings, where the top players can be many times above the typical competitor. In software engineering the range is more balanced, suggesting a more stable career path.
+
+---
+
+## Overall conclusion for the software engineer salary section
+
+Across my three questions, the software engineer salary data shows a consistent story. Median salaries vary across states, but many locations offer strong pay. The highest paying states do not capture an overwhelming share of the total median salary mass, and geographic patterns show several regions with solid opportunities. Within states, lower and upper percentiles are not vastly different from the median compared to the extreme concentration seen in esports prize money.
+
+For a student thinking about long term income, this suggests that software engineering provides a relatively stable and broadly accessible path to high earnings. When our group compares these results to the esports side of the project, the contrast in concentration and stability will help highlight how different the financial realities are between these two career choices.
