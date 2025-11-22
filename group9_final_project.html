@@ -1,0 +1,1767 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.42">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Duy Nguyen – Esports Section">
+<meta name="author" content="Bat-Orgil Erdenebat – Software Engineer Salary Section">
+<meta name="author" content="Daniel Jimenez – Software Engineer Career / Experience Section">
+<meta name="dcterms.date" content="2025-11-21">
+
+<title>Group 9 – Esports vs Software Engineers</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="group9_final_project_files/libs/clipboard/clipboard.min.js"></script>
+<script src="group9_final_project_files/libs/quarto-html/quarto.js"></script>
+<script src="group9_final_project_files/libs/quarto-html/popper.min.js"></script>
+<script src="group9_final_project_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="group9_final_project_files/libs/quarto-html/anchor.min.js"></script>
+<link href="group9_final_project_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="group9_final_project_files/libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="group9_final_project_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="group9_final_project_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="group9_final_project_files/libs/bootstrap/bootstrap-1bc8a17f135ab3d594c857e9f48e611b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="group9_final_project_files/libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
+
+<script src="group9_final_project_files/libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+
+<script src="group9_final_project_files/libs/plotly-binding-4.11.0/plotly.js"></script>
+
+<script src="group9_final_project_files/libs/typedarray-0.1/typedarray.min.js"></script>
+
+<script src="group9_final_project_files/libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+
+<link href="group9_final_project_files/libs/crosstalk-1.2.2/css/crosstalk.min.css" rel="stylesheet">
+
+<script src="group9_final_project_files/libs/crosstalk-1.2.2/js/crosstalk.min.js"></script>
+
+<link href="group9_final_project_files/libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet">
+
+<script src="group9_final_project_files/libs/plotly-main-2.11.1/plotly-latest.min.js"></script>
+
+<script src="group9_final_project_files/libs/kePrint-0.0.1/kePrint.js"></script>
+
+<link href="group9_final_project_files/libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+
+<link href="group9_final_project_files/libs/leaflet-1.3.1/leaflet.css" rel="stylesheet">
+
+<script src="group9_final_project_files/libs/leaflet-1.3.1/leaflet.js"></script>
+
+<link href="group9_final_project_files/libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet">
+
+<script src="group9_final_project_files/libs/proj4-2.6.2/proj4.min.js"></script>
+
+<script src="group9_final_project_files/libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+
+<link href="group9_final_project_files/libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet">
+
+<script src="group9_final_project_files/libs/leaflet-binding-2.2.3/leaflet.js"></script>
+
+<script src="group9_final_project_files/libs/leaflet-providers-2.0.0/leaflet-providers_2.0.0.js"></script>
+
+<script src="group9_final_project_files/libs/leaflet-providers-plugin-2.2.3/leaflet-providers-plugin.js"></script>
+
+<link href="group9_final_project_files/libs/leaflet-awesomemarkers-2.0.3/leaflet.awesome-markers.css" rel="stylesheet">
+
+<script src="group9_final_project_files/libs/leaflet-awesomemarkers-2.0.3/leaflet.awesome-markers.min.js"></script>
+
+<link href="group9_final_project_files/libs/fontawesome-4.7.0/font-awesome.min.css" rel="stylesheet">
+
+
+
+</head>
+
+<body>
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#overall-introduction" id="toc-overall-introduction" class="nav-link active" data-scroll-target="#overall-introduction">Overall Introduction</a></li>
+  <li><a href="#duys-esports-section-group-9" id="toc-duys-esports-section-group-9" class="nav-link" data-scroll-target="#duys-esports-section-group-9">Duy’s Esports Section (Group 9)</a>
+  <ul class="collapse">
+  <li><a href="#question-1-what-is-the-typical-age-and-experience-profile-of-esports-professionals" id="toc-question-1-what-is-the-typical-age-and-experience-profile-of-esports-professionals" class="nav-link" data-scroll-target="#question-1-what-is-the-typical-age-and-experience-profile-of-esports-professionals">Question 1 – What is the typical age and experience profile of esports professionals?</a>
+  <ul class="collapse">
+  <li><a href="#summary-statistics-for-age-and-experience" id="toc-summary-statistics-for-age-and-experience" class="nav-link" data-scroll-target="#summary-statistics-for-age-and-experience">1.1 Summary statistics for age and experience</a></li>
+  <li><a href="#histogram-of-player-ages" id="toc-histogram-of-player-ages" class="nav-link" data-scroll-target="#histogram-of-player-ages">1.2 Histogram of player ages</a></li>
+  <li><a href="#plotly-html-widget-age-vs-performance" id="toc-plotly-html-widget-age-vs-performance" class="nav-link" data-scroll-target="#plotly-html-widget-age-vs-performance">1.3 Plotly html widget – Age vs performance</a></li>
+  </ul></li>
+  <li><a href="#question-2-do-older-esports-titles-generate-more-total-prize-money" id="toc-question-2-do-older-esports-titles-generate-more-total-prize-money" class="nav-link" data-scroll-target="#question-2-do-older-esports-titles-generate-more-total-prize-money">Question 2 – Do older esports titles generate more total prize money?</a>
+  <ul class="collapse">
+  <li><a href="#prepare-data-and-summary-for-game-age-and-earnings" id="toc-prepare-data-and-summary-for-game-age-and-earnings" class="nav-link" data-scroll-target="#prepare-data-and-summary-for-game-age-and-earnings">2.1 Prepare data and summary for game age and earnings</a></li>
+  <li><a href="#scatterplot-game-age-vs-total-earnings" id="toc-scatterplot-game-age-vs-total-earnings" class="nav-link" data-scroll-target="#scatterplot-game-age-vs-total-earnings">2.2 Scatterplot – Game age vs total earnings</a></li>
+  <li><a href="#kableextra-table-top-10-games-by-total-earnings" id="toc-kableextra-table-top-10-games-by-total-earnings" class="nav-link" data-scroll-target="#kableextra-table-top-10-games-by-total-earnings">2.3 kableExtra table – Top 10 games by total earnings</a></li>
+  </ul></li>
+  <li><a href="#question-3-which-games-dominate-the-top-earning-players" id="toc-question-3-which-games-dominate-the-top-earning-players" class="nav-link" data-scroll-target="#question-3-which-games-dominate-the-top-earning-players">Question 3 – Which games dominate the top earning players?</a>
+  <ul class="collapse">
+  <li><a href="#four-pipe-wrangling-aggregate-players-by-highest-paying-game" id="toc-four-pipe-wrangling-aggregate-players-by-highest-paying-game" class="nav-link" data-scroll-target="#four-pipe-wrangling-aggregate-players-by-highest-paying-game">3.1 Four pipe wrangling: aggregate players by highest paying game</a></li>
+  <li><a href="#bar-chart-top-games-by-total-earnings-top-1000-players" id="toc-bar-chart-top-games-by-total-earnings-top-1000-players" class="nav-link" data-scroll-target="#bar-chart-top-games-by-total-earnings-top-1000-players">3.2 Bar chart – Top games by total earnings (top 1000 players)</a></li>
+  <li><a href="#kableextra-table-top-15-individual-players" id="toc-kableextra-table-top-15-individual-players" class="nav-link" data-scroll-target="#kableextra-table-top-15-individual-players">3.3 kableExtra table – Top 15 individual players</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#overall-conclusion-for-duys-esports-section" id="toc-overall-conclusion-for-duys-esports-section" class="nav-link" data-scroll-target="#overall-conclusion-for-duys-esports-section">Overall Conclusion for Duy’s Esports Section</a></li>
+  <li><a href="#bat-orgils-software-engineer-salary-section-group-9" id="toc-bat-orgils-software-engineer-salary-section-group-9" class="nav-link" data-scroll-target="#bat-orgils-software-engineer-salary-section-group-9">Bat-Orgil’s Software Engineer Salary Section (Group 9)</a>
+  <ul class="collapse">
+  <li><a href="#data-and-setup-for-software-engineer-salaries" id="toc-data-and-setup-for-software-engineer-salaries" class="nav-link" data-scroll-target="#data-and-setup-for-software-engineer-salaries">Data and setup for software engineer salaries</a></li>
+  <li><a href="#question-1-how-do-median-salaries-vary-across-states" id="toc-question-1-how-do-median-salaries-vary-across-states" class="nav-link" data-scroll-target="#question-1-how-do-median-salaries-vary-across-states">Question 1 – How do median salaries vary across states?</a>
+  <ul class="collapse">
+  <li><a href="#q1-visualization-bar-chart-of-median-salary-by-state" id="toc-q1-visualization-bar-chart-of-median-salary-by-state" class="nav-link" data-scroll-target="#q1-visualization-bar-chart-of-median-salary-by-state">Q1 visualization – Bar chart of median salary by state</a></li>
+  <li><a href="#q1-narrative-and-conclusion" id="toc-q1-narrative-and-conclusion" class="nav-link" data-scroll-target="#q1-narrative-and-conclusion">Q1 narrative and conclusion</a></li>
+  </ul></li>
+  <li><a href="#question-2-how-concentrated-is-income-among-the-highest-paying-states" id="toc-question-2-how-concentrated-is-income-among-the-highest-paying-states" class="nav-link" data-scroll-target="#question-2-how-concentrated-is-income-among-the-highest-paying-states">Question 2 – How concentrated is income among the highest paying states?</a>
+  <ul class="collapse">
+  <li><a href="#q2-wrangling-four-pipe-concentration-pipeline" id="toc-q2-wrangling-four-pipe-concentration-pipeline" class="nav-link" data-scroll-target="#q2-wrangling-four-pipe-concentration-pipeline">Q2 wrangling – Four pipe concentration pipeline</a></li>
+  <li><a href="#q2-visualization-kableextra-table-of-top-states-and-their-share" id="toc-q2-visualization-kableextra-table-of-top-states-and-their-share" class="nav-link" data-scroll-target="#q2-visualization-kableextra-table-of-top-states-and-their-share">Q2 visualization – kableExtra table of top states and their share</a></li>
+  <li><a href="#q2-narrative-and-conclusion" id="toc-q2-narrative-and-conclusion" class="nav-link" data-scroll-target="#q2-narrative-and-conclusion">Q2 narrative and conclusion</a></li>
+  </ul></li>
+  <li><a href="#question-3-what-geographic-patterns-appear-in-pay-levels-and-percentiles" id="toc-question-3-what-geographic-patterns-appear-in-pay-levels-and-percentiles" class="nav-link" data-scroll-target="#question-3-what-geographic-patterns-appear-in-pay-levels-and-percentiles">Question 3 – What geographic patterns appear in pay levels and percentiles?</a>
+  <ul class="collapse">
+  <li><a href="#q3-visualization-1-us-map-of-median-salary-by-state" id="toc-q3-visualization-1-us-map-of-median-salary-by-state" class="nav-link" data-scroll-target="#q3-visualization-1-us-map-of-median-salary-by-state">Q3 visualization 1 – US map of median salary by state</a></li>
+  <li><a href="#q3-visualization-2-leaflet-map-with-custom-markers" id="toc-q3-visualization-2-leaflet-map-with-custom-markers" class="nav-link" data-scroll-target="#q3-visualization-2-leaflet-map-with-custom-markers">Q3 visualization 2 – Leaflet map with custom markers</a></li>
+  <li><a href="#q3-narrative-and-conclusion" id="toc-q3-narrative-and-conclusion" class="nav-link" data-scroll-target="#q3-narrative-and-conclusion">Q3 narrative and conclusion</a></li>
+  </ul></li>
+  <li><a href="#overall-conclusion-for-the-software-engineer-salary-section" id="toc-overall-conclusion-for-the-software-engineer-salary-section" class="nav-link" data-scroll-target="#overall-conclusion-for-the-software-engineer-salary-section">Overall conclusion for the software engineer salary section</a></li>
+  </ul></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="group9_final_project.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
+</div>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Group 9 – Esports vs Software Engineers</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Authors</div>
+    <div class="quarto-title-meta-contents">
+             <p>Duy Nguyen – Esports Section </p>
+             <p>Bat-Orgil Erdenebat – Software Engineer Salary Section </p>
+             <p>Daniel Jimenez – Software Engineer Career / Experience Section </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">November 21, 2025</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="overall-introduction" class="level1">
+<h1>Overall Introduction</h1>
+<p>Our project investigates how <strong>esports professionals</strong> compare to <strong>software engineers</strong> in terms of income, age, and career patterns. Esports is often seen as a short, intense career with high earnings for only a small number of players, while software engineering is usually described as a long term, stable profession.</p>
+<p>Each member of <strong>Group 9</strong> is responsible for one part of this story:</p>
+<ul>
+<li><strong>Duy Nguyen</strong> – <em>Esports section</em>: age and experience of esports players, game level earnings, and which games dominate the top earning professionals.</li>
+<li><strong>Bat-Orgil Erdenebat</strong> – <em>Software engineer salary section</em> (US and state level maps, salary concentration).</li>
+<li><strong>Daniel Jimenez</strong> – <em>Software engineer career and experience section</em> (career patterns, additional maps or widgets).</li>
+</ul>
+<p>Together, these sections form a complete comparison between esports and software engineering careers.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Global setup: load packages used across all questions</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>pacman<span class="sc">::</span><span class="fu">p_load</span>(</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  tidyverse,</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  kableExtra,</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  plotly,</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  usmap,</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  leaflet,</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  maps,</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  scales</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="fu">theme_set</span>(<span class="fu">theme_minimal</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load esports datasets for Duy's section</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>players <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">"data/esports_players_top1000_clean.csv"</span>)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>team_perf <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">"data/esports_team_performance_clean.csv"</span>)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>games <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">"data/general_esport_games_clean.csv"</span>)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(players)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 1,000
+Columns: 8
+$ rank                &lt;dbl&gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15,…
+$ player_id           &lt;chr&gt; "N0tail", "JerAx", "Miposhka", "ana", "Ceb", "Yato…
+$ player_name         &lt;chr&gt; "Johan Sundstein", "Jesse Vainikka", "Yaroslav Nai…
+$ highest_paying_game &lt;chr&gt; "Dota 2", "Dota 2", "Dota 2", "Dota 2", "Dota 2", …
+$ total_overall_usd   &lt;dbl&gt; 7184163, 6486624, 6227771, 6024412, 5949443, 59327…
+$ total_game_usd      &lt;dbl&gt; 7172437, 6486075, 6227771, 6024412, 5949443, 59327…
+$ pct_of_total_num    &lt;dbl&gt; 99.84, 99.99, 100.00, 100.00, 100.00, 100.00, 100.…
+$ source_url          &lt;chr&gt; "https://www.esportsearnings.com/players/highest-e…</code></pre>
+</div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(team_perf)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 50
+Columns: 11
+$ team_id                 &lt;dbl&gt; 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 3…
+$ season_index            &lt;dbl&gt; 0, 1, 2, 3, 4, 0, 1, 2, 3, 4, 0, 1, 2, 3, 4, 0…
+$ training_hours_per_week &lt;dbl&gt; 31.23620, 48.52143, 41.95982, 37.95975, 24.680…
+$ experience_years        &lt;dbl&gt; 9.756677, 8.201063, 9.515992, 9.158619, 6.7832…
+$ age_years               &lt;dbl&gt; 18.31429, 24.36410, 21.14356, 23.08571, 27.075…
+$ budget_usd              &lt;dbl&gt; 4724.798, 2718.686, 2434.685, 3468.358, 4956.9…
+$ tournaments_played      &lt;dbl&gt; 11, 12, 7, 17, 16, 8, 6, 14, 18, 19, 10, 14, 1…
+$ win_rate                &lt;dbl&gt; 0.7530494, 0.5171972, 0.4750392, 0.6225517, 0.…
+$ performance_score       &lt;dbl&gt; 735.7430, 432.9656, 397.5882, 542.3151, 755.24…
+$ win_rate_pct            &lt;dbl&gt; 75.30494, 51.71972, 47.50392, 62.25517, 63.446…
+$ budget_k_usd            &lt;dbl&gt; 4.724798, 2.718686, 2.434685, 3.468358, 4.9569…</code></pre>
+</div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(games)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 669
+Columns: 11
+$ game                 &lt;chr&gt; "Dota 2", "Fortnite", "Counter-Strike: Global Off…
+$ release_year         &lt;dbl&gt; 2013, 2017, 2012, 2009, 2015, 2017, 2017, 2015, 2…
+$ genre                &lt;chr&gt; "Multiplayer Online Battle Arena", "Battle Royale…
+$ total_earnings_usd   &lt;dbl&gt; 360461163, 191012699, 162489707, 113596025, 98746…
+$ offline_earnings_usd &lt;dbl&gt; 313554838, 56299885, 105130836, 98546688, 9452896…
+$ percent_offline      &lt;dbl&gt; 0.8698713, 0.2947442, 0.6470000, 0.8675188, 0.957…
+$ total_players        &lt;dbl&gt; 4980, 9535, 16518, 9588, 2231, 4263, 3967, 3070, …
+$ total_tournaments    &lt;dbl&gt; 1934, 2291, 7033, 3000, 179, 341, 631, 568, 7510,…
+$ online_earnings_usd  &lt;dbl&gt; 46906325.0, 134712814.1, 57358870.6, 15049336.3, …
+$ offline_share        &lt;dbl&gt; 0.8698713, 0.2947442, 0.6470000, 0.8675188, 0.957…
+$ game_age_years       &lt;dbl&gt; 12, 8, 13, 16, 10, 8, 8, 10, 15, 10, 9, 5, 11, 6,…</code></pre>
+</div>
+</div>
+<hr>
+</section>
+<section id="duys-esports-section-group-9" class="level1">
+<h1>Duy’s Esports Section (Group 9)</h1>
+<p><strong>This section (coding and analysis) is written by: Duy Nguyen.</strong></p>
+<p>Instructor feedback for <strong>Group 9</strong> asked us to:</p>
+<ul>
+<li>Compare <strong>ages</strong> of esports professionals and discuss how long it takes to “make it”.</li>
+<li>Look at different <strong>esports games</strong>, because some games might produce much higher earnings than others.</li>
+<li>Examine how long those games have been around and whether long running titles have an advantage.</li>
+</ul>
+<p>For my part of the project I use:</p>
+<ul>
+<li><strong>Dataset 1 (scraped):</strong> <code>esports_players_top1000_clean.csv</code> – top 1000 players by total earnings, scraped from <em>EsportsEarnings</em>.</li>
+<li><strong>Dataset 2 (Kaggle – age and experience):</strong> <code>esports_team_performance_clean.csv</code> – team and player level statistics including age, experience, and performance.</li>
+<li><strong>Dataset 3 (Kaggle – game earnings):</strong> <code>general_esport_games_clean.csv</code> – game level earnings and release years.</li>
+</ul>
+<p>My section includes:</p>
+<ul>
+<li>A <strong>histogram</strong> and <strong>bar chart</strong> (ggplot),</li>
+<li>A <strong>Plotly html widget</strong> with a new feature (x axis range slider),</li>
+<li>A formatted <strong>table using kableExtra</strong>,</li>
+<li>And at least one dataset wrangled with <strong>four different dplyr verbs</strong> (<code>group_by</code>, <code>summarise</code>, <code>mutate</code>, <code>filter</code>).</li>
+</ul>
+<hr>
+<section id="question-1-what-is-the-typical-age-and-experience-profile-of-esports-professionals" class="level2">
+<h2 class="anchored" data-anchor-id="question-1-what-is-the-typical-age-and-experience-profile-of-esports-professionals">Question 1 – What is the typical age and experience profile of esports professionals?</h2>
+<p><strong>Question 1:</strong><br>
+<em>What does the age and experience distribution look like for esports players in our Kaggle performance dataset, and what does this imply about the window when players tend to compete?</em></p>
+<p>We first summarise the age and experience of players, then visualise the age distribution and explore how age relates to performance.</p>
+<section id="summary-statistics-for-age-and-experience" class="level3">
+<h3 class="anchored" data-anchor-id="summary-statistics-for-age-and-experience">1.1 Summary statistics for age and experience</h3>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Question 1: summary statistics for player age and experience</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>q1_summary <span class="ot">&lt;-</span> team_perf <span class="sc">%&gt;%</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean_age          =</span> <span class="fu">mean</span>(age_years, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">median_age        =</span> <span class="fu">median</span>(age_years, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">min_age           =</span> <span class="fu">min</span>(age_years, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">max_age           =</span> <span class="fu">max</span>(age_years, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean_experience   =</span> <span class="fu">mean</span>(experience_years, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">median_experience =</span> <span class="fu">median</span>(experience_years, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>q1_summary</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 6
+  mean_age median_age min_age max_age mean_experience median_experience
+     &lt;dbl&gt;      &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;           &lt;dbl&gt;             &lt;dbl&gt;
+1     22.8       22.2    18.1    27.7            5.96              6.07</code></pre>
+</div>
+</div>
+<p><strong>Narrative (summary stats):</strong></p>
+<p>These summary statistics show the typical age and years of experience for players in the dataset. In our sample, the average player is in the early twenties and almost everyone falls inside a fairly narrow ten year window. Experience is also concentrated, which suggests that esports professionals typically reach a high level quite quickly and do not spend decades in the scene.</p>
+</section>
+<section id="histogram-of-player-ages" class="level3">
+<h3 class="anchored" data-anchor-id="histogram-of-player-ages">1.2 Histogram of player ages</h3>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Question 1: visualise the distribution of player ages using a histogram</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(team_perf, <span class="fu">aes</span>(<span class="at">x =</span> age_years)) <span class="sc">+</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">2</span>, <span class="at">color =</span> <span class="st">"white"</span>, <span class="at">fill =</span> <span class="st">"#1f78b4"</span>) <span class="sc">+</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Distribution of Esports Player Ages"</span>,</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">x     =</span> <span class="st">"Age (years)"</span>,</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">y     =</span> <span class="st">"Number of players"</span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="group9_final_project_files/figure-html/q1-age-hist-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption>Histogram of player ages in the Kaggle esports performance dataset</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>Narrative (histogram):</strong></p>
+<p>The histogram shows that most players are between roughly eighteen and twenty seven years old, with the tallest bars around the early twenties. There are almost no players far beyond the mid twenties, and the right tail drops off quickly. This fits the idea that reaction heavy esports favour younger competitors and that the competitive window is relatively short.</p>
+<p><strong>Conclusion for Question 1 – age distribution:</strong></p>
+<p>Overall, the age distribution suggests that esports careers are concentrated in the early adult years, with only a small number of older players still competing at a high level.</p>
+</section>
+<section id="plotly-html-widget-age-vs-performance" class="level3">
+<h3 class="anchored" data-anchor-id="plotly-html-widget-age-vs-performance">1.3 Plotly html widget – Age vs performance</h3>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Question 1 (html widget): relationship between age and performance score</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="co"># New Plotly feature used: x axis range slider (not used in homework)</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>q1_plotly <span class="ot">&lt;-</span> <span class="fu">plot_ly</span>(</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">data  =</span> team_perf,</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">x     =</span> <span class="sc">~</span>age_years,</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">y     =</span> <span class="sc">~</span>performance_score,</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">color =</span> <span class="sc">~</span>experience_years,</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">type  =</span> <span class="st">"scatter"</span>,</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">mode  =</span> <span class="st">"markers"</span>,</span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">hoverinfo =</span> <span class="st">"text"</span>,</span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">text =</span> <span class="sc">~</span><span class="fu">paste</span>(</span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Age:"</span>, age_years,</span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>    <span class="st">"&lt;br&gt;Experience (years):"</span>, experience_years,</span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>    <span class="st">"&lt;br&gt;Win rate (%):"</span>, <span class="fu">round</span>(win_rate_pct, <span class="dv">1</span>)</span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>) <span class="sc">%&gt;%</span></span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">layout</span>(</span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Age vs Performance Score (colored by experience years)"</span>,</span>
+<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">xaxis =</span> <span class="fu">list</span>(</span>
+<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a>      <span class="at">title      =</span> <span class="st">"Age (years)"</span>,</span>
+<span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a>      <span class="at">rangeslider =</span> <span class="fu">list</span>(<span class="at">visible =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb11-24"><a href="#cb11-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">yaxis =</span> <span class="fu">list</span>(<span class="at">title =</span> <span class="st">"Performance score"</span>)</span>
+<span id="cb11-25"><a href="#cb11-25" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb11-26"><a href="#cb11-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-27"><a href="#cb11-27" aria-hidden="true" tabindex="-1"></a>q1_plotly</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div class="plotly html-widget html-fill-item" id="htmlwidget-262d4da4c3c46263dda8" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-262d4da4c3c46263dda8">{"x":{"visdat":{"64c0790548f7":["function () ","plotlyVisDat"]},"cur_data":"64c0790548f7","attrs":{"64c0790548f7":{"x":{},"y":{},"mode":"markers","hoverinfo":"text","text":{},"color":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter"}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"title":"Age vs Performance Score (colored by experience years)","xaxis":{"domain":[0,1],"automargin":true,"title":"Age (years)","rangeslider":{"visible":true}},"yaxis":{"domain":[0,1],"automargin":true,"title":"Performance score"},"hovermode":"closest","showlegend":false,"legend":{"yanchor":"top","y":0.5}},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"data":[{"x":[18.314291856867339,24.364104112637801,21.143559810763271,23.08570691164703,27.07566473926093,20.49292229148875,22.1038292303563,25.555511385430481,20.287981654916219,18.76979909828793,20.89751452913768,19.612212872540049,27.29697652342573,26.081203795644171,24.334037565104239,26.714605901877182,26.036720768991149,19.86570058886036,26.92558998489978,23.393422419156511,26.07440155164063,26.960912999234932,21.18003474971864,19.100519245276772,20.279351625419419,22.27107788626256,26.180147659224929,26.60730583256343,18.069521305311909,23.107473025775661,22.174110031487789,20.221078104707299,19.198653673336828,21.376151714036279,27.429097039125189,21.232029320207548,23.18790621743366,25.030189588951782,21.636296023792941,27.717820827209611,27.624472949421111,20.517822958253639,22.972485058923851,21.008783098167701,20.848404943774671,18.368869473545331,24.095643339798968,23.026790232288619,18.51478751249989,20.786464642366109],"y":[735.74302547210618,432.96555833220822,397.58815595514687,542.31510828348985,755.24145965520688,425.38383129844021,608.82497292496782,665.35412436704837,419.51173878616271,646.84615558464634,467.00176772648871,608.01344317719168,611.30964295225226,543.61711061599942,341.81697222670499,701.87298424679932,465.93264022429008,423.8528791149169,346.44621614073452,598.53089583798862,628.27974194418152,309.03655551519182,539.00376047803923,418.8822768035804,605.11579994672957,410.0701919901839,633.50838328686586,490.93368322852729,750.60869046904486,380.10841575360348,486.73673693433477,369.06827108660468,730.07298506723123,720.11088887697269,448.94217152106057,620.20901912385045,690.15238141334362,572.44418955574668,570.01918672670718,428.92573130059611,353.99597934764722,732.92031683403445,720.56821617031289,617.86627342322015,479.27597941645951,473.83014932898561,638.15104377894431,717.76649451951062,702.75081961128228,655.23704437355798],"mode":"markers","hoverinfo":["text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text"],"text":["Age: 18.3142918568673 <br>Experience (years): 9.75667702211647 <br>Win rate (%): 75.3","Age: 24.3641041126378 <br>Experience (years): 8.20106258688892 <br>Win rate (%): 51.7","Age: 21.1435598107633 <br>Experience (years): 9.51599153251351 <br>Win rate (%): 47.5","Age: 23.085706911647 <br>Experience (years): 9.15861880342119 <br>Win rate (%): 62.3","Age: 27.0756647392609 <br>Experience (years): 6.78319983048868 <br>Win rate (%): 63.4","Age: 20.4929222914887 <br>Experience (years): 9.37499388018494 <br>Win rate (%): 73.2","Age: 22.1038292303563 <br>Experience (years): 2.70794001641536 <br>Win rate (%): 41.5","Age: 25.5555113854305 <br>Experience (years): 3.56786289935316 <br>Win rate (%): 55","Age: 20.2879816549162 <br>Experience (years): 2.3618183112843 <br>Win rate (%): 58.6","Age: 18.7697990982879 <br>Experience (years): 4.60264264610611 <br>Win rate (%): 68.4","Age: 20.8975145291377 <br>Experience (years): 5.10941831751586 <br>Win rate (%): 32.2","Age: 19.61221287254 <br>Experience (years): 4.17079225419117 <br>Win rate (%): 79.7","Age: 27.2969765234257 <br>Experience (years): 8.62990007321543 <br>Win rate (%): 53.5","Age: 26.0812037956442 <br>Experience (years): 4.85402661354871 <br>Win rate (%): 44","Age: 24.3340375651042 <br>Experience (years): 4.24747607749905 <br>Win rate (%): 74.2","Age: 26.7146059018772 <br>Experience (years): 6.34156866526599 <br>Win rate (%): 67.4","Age: 26.0367207689911 <br>Experience (years): 3.1273937997981 <br>Win rate (%): 77.7","Age: 19.8657005888604 <br>Experience (years): 8.41757584603232 <br>Win rate (%): 46.5","Age: 26.9255899848998 <br>Experience (years): 2.59640514943817 <br>Win rate (%): 57.6","Age: 23.3934224191565 <br>Experience (years): 9.89509549280414 <br>Win rate (%): 58.6","Age: 26.0744015516406 <br>Experience (years): 8.17795815437326 <br>Win rate (%): 79","Age: 26.9609129992349 <br>Experience (years): 3.58972545227338 <br>Win rate (%): 33.8","Age: 21.1800347497186 <br>Experience (years): 2.04417693698882 <br>Win rate (%): 45.3","Age: 19.1005192452768 <br>Experience (years): 8.52369142763867 <br>Win rate (%): 39.5","Age: 20.2793516254194 <br>Experience (years): 7.65485875078094 <br>Win rate (%): 43.4","Age: 22.2710778862626 <br>Experience (years): 7.8320573443279 <br>Win rate (%): 54.3","Age: 26.1801476592249 <br>Experience (years): 8.17016277348757 <br>Win rate (%): 48.6","Age: 26.6073058325634 <br>Experience (years): 2.59235721387272 <br>Win rate (%): 49.7","Age: 18.0695213053119 <br>Experience (years): 4.86772582835418 <br>Win rate (%): 72.2","Age: 23.1074730257757 <br>Experience (years): 2.92695247620104 <br>Win rate (%): 76.5","Age: 22.1741100314878 <br>Experience (years): 8.90482740700475 <br>Win rate (%): 33.5","Age: 20.2210781047073 <br>Experience (years): 6.98638501462046 <br>Win rate (%): 40.4","Age: 19.1986536733368 <br>Experience (years): 4.64718419882119 <br>Win rate (%): 63.6","Age: 21.3761517140363 <br>Experience (years): 2.50846680228819 <br>Win rate (%): 47.9","Age: 27.4290970391252 <br>Experience (years): 4.4878585737253 <br>Win rate (%): 42.7","Age: 21.2320293202075 <br>Experience (years): 4.60146657621398 <br>Win rate (%): 44.8","Age: 23.1879062174337 <br>Experience (years): 7.83684942670451 <br>Win rate (%): 46.1","Age: 25.0301895889518 <br>Experience (years): 7.1004597708417 <br>Win rate (%): 72.4","Age: 21.6362960237929 <br>Experience (years): 9.09770194061061 <br>Win rate (%): 36.8","Age: 27.7178208272096 <br>Experience (years): 5.77771940129559 <br>Win rate (%): 65.4","Age: 27.6244729494211 <br>Experience (years): 2.95675396750641 <br>Win rate (%): 57.6","Age: 20.5178229582536 <br>Experience (years): 7.70595829778396 <br>Win rate (%): 44.8","Age: 22.9724850589239 <br>Experience (years): 8.08628038893518 <br>Win rate (%): 51","Age: 21.0087830981677 <br>Experience (years): 6.49021758055597 <br>Win rate (%): 42.8","Age: 20.8484049437747 <br>Experience (years): 8.16773743963649 <br>Win rate (%): 60.6","Age: 18.3688694735453 <br>Experience (years): 5.95036477091513 <br>Win rate (%): 34.1","Age: 24.095643339799 <br>Experience (years): 6.18186263505595 <br>Win rate (%): 30.3","Age: 23.0267902322886 <br>Experience (years): 5.4203281468684 <br>Win rate (%): 61.4","Age: 18.5147875124999 <br>Experience (years): 2.20335301395276 <br>Win rate (%): 39.7","Age: 20.7864646423661 <br>Experience (years): 2.86313141594644 <br>Win rate (%): 33.5"],"type":"scatter","marker":{"colorbar":{"title":"experience_years","ticklen":2},"cmin":2.0441769369888192,"cmax":9.8950954928041384,"colorscale":[["0","rgba(68,1,84,1)"],["0.0416666666666667","rgba(70,19,97,1)"],["0.0833333333333334","rgba(72,32,111,1)"],["0.125","rgba(71,45,122,1)"],["0.166666666666667","rgba(68,58,128,1)"],["0.208333333333333","rgba(64,70,135,1)"],["0.25","rgba(60,82,138,1)"],["0.291666666666667","rgba(56,93,140,1)"],["0.333333333333333","rgba(49,104,142,1)"],["0.375","rgba(46,114,142,1)"],["0.416666666666667","rgba(42,123,142,1)"],["0.458333333333333","rgba(38,133,141,1)"],["0.5","rgba(37,144,140,1)"],["0.541666666666667","rgba(33,154,138,1)"],["0.583333333333333","rgba(39,164,133,1)"],["0.625","rgba(47,174,127,1)"],["0.666666666666667","rgba(53,183,121,1)"],["0.708333333333333","rgba(79,191,110,1)"],["0.75","rgba(98,199,98,1)"],["0.791666666666667","rgba(119,207,85,1)"],["0.833333333333333","rgba(147,214,70,1)"],["0.875","rgba(172,220,52,1)"],["0.916666666666667","rgba(199,225,42,1)"],["0.958333333333333","rgba(226,228,40,1)"],["1","rgba(253,231,37,1)"]],"showscale":false,"color":[9.7566770221164685,8.2010625868889164,9.5159915325135138,9.1586188034211915,6.7831998304886811,9.3749938801849364,2.707940016415356,3.567862899353162,2.361818311284305,4.6026426461061147,5.1094183175158561,4.1707922541911673,8.6299000732154347,4.8540266135487142,4.2474760774990461,6.3415686652659877,3.1273937997981012,8.4175758460323173,2.596405149438167,9.8950954928041384,8.1779581543732593,3.5897254522733788,2.0441769369888192,8.5236914276386742,7.6548587507809369,7.8320573443278976,8.170162773487565,2.5923572138727229,4.8677258283541809,2.9269524762010382,8.9048274070047491,6.9863850146204634,4.6471841988211926,2.5084668022881891,4.4878585737252976,4.6014665762139764,7.8368494267045126,7.100459770841705,9.0977019406106123,5.7777194012955944,2.9567539675064141,7.70595829778396,8.0862803889351795,6.4902175805559699,8.1677374396364879,5.9503647709151259,6.1818626350559516,5.420328146868397,2.203353013952762,2.8631314159464361],"line":{"colorbar":{"title":"","ticklen":2},"cmin":2.0441769369888192,"cmax":9.8950954928041384,"colorscale":[["0","rgba(68,1,84,1)"],["0.0416666666666667","rgba(70,19,97,1)"],["0.0833333333333334","rgba(72,32,111,1)"],["0.125","rgba(71,45,122,1)"],["0.166666666666667","rgba(68,58,128,1)"],["0.208333333333333","rgba(64,70,135,1)"],["0.25","rgba(60,82,138,1)"],["0.291666666666667","rgba(56,93,140,1)"],["0.333333333333333","rgba(49,104,142,1)"],["0.375","rgba(46,114,142,1)"],["0.416666666666667","rgba(42,123,142,1)"],["0.458333333333333","rgba(38,133,141,1)"],["0.5","rgba(37,144,140,1)"],["0.541666666666667","rgba(33,154,138,1)"],["0.583333333333333","rgba(39,164,133,1)"],["0.625","rgba(47,174,127,1)"],["0.666666666666667","rgba(53,183,121,1)"],["0.708333333333333","rgba(79,191,110,1)"],["0.75","rgba(98,199,98,1)"],["0.791666666666667","rgba(119,207,85,1)"],["0.833333333333333","rgba(147,214,70,1)"],["0.875","rgba(172,220,52,1)"],["0.916666666666667","rgba(199,225,42,1)"],["0.958333333333333","rgba(226,228,40,1)"],["1","rgba(253,231,37,1)"]],"showscale":false,"color":[9.7566770221164685,8.2010625868889164,9.5159915325135138,9.1586188034211915,6.7831998304886811,9.3749938801849364,2.707940016415356,3.567862899353162,2.361818311284305,4.6026426461061147,5.1094183175158561,4.1707922541911673,8.6299000732154347,4.8540266135487142,4.2474760774990461,6.3415686652659877,3.1273937997981012,8.4175758460323173,2.596405149438167,9.8950954928041384,8.1779581543732593,3.5897254522733788,2.0441769369888192,8.5236914276386742,7.6548587507809369,7.8320573443278976,8.170162773487565,2.5923572138727229,4.8677258283541809,2.9269524762010382,8.9048274070047491,6.9863850146204634,4.6471841988211926,2.5084668022881891,4.4878585737252976,4.6014665762139764,7.8368494267045126,7.100459770841705,9.0977019406106123,5.7777194012955944,2.9567539675064141,7.70595829778396,8.0862803889351795,6.4902175805559699,8.1677374396364879,5.9503647709151259,6.1818626350559516,5.420328146868397,2.203353013952762,2.8631314159464361]}},"xaxis":"x","yaxis":"y","frame":null},{"x":[18.069521305311909,27.717820827209611],"y":[309.03655551519182,755.24145965520688],"type":"scatter","mode":"markers","opacity":0,"hoverinfo":"none","showlegend":false,"marker":{"colorbar":{"title":"experience_years","ticklen":2,"len":0.5,"lenmode":"fraction","y":1,"yanchor":"top"},"cmin":2.0441769369888192,"cmax":9.8950954928041384,"colorscale":[["0","rgba(68,1,84,1)"],["0.0416666666666667","rgba(70,19,97,1)"],["0.0833333333333334","rgba(72,32,111,1)"],["0.125","rgba(71,45,122,1)"],["0.166666666666667","rgba(68,58,128,1)"],["0.208333333333333","rgba(64,70,135,1)"],["0.25","rgba(60,82,138,1)"],["0.291666666666667","rgba(56,93,140,1)"],["0.333333333333333","rgba(49,104,142,1)"],["0.375","rgba(46,114,142,1)"],["0.416666666666667","rgba(42,123,142,1)"],["0.458333333333333","rgba(38,133,141,1)"],["0.5","rgba(37,144,140,1)"],["0.541666666666667","rgba(33,154,138,1)"],["0.583333333333333","rgba(39,164,133,1)"],["0.625","rgba(47,174,127,1)"],["0.666666666666667","rgba(53,183,121,1)"],["0.708333333333333","rgba(79,191,110,1)"],["0.75","rgba(98,199,98,1)"],["0.791666666666667","rgba(119,207,85,1)"],["0.833333333333333","rgba(147,214,70,1)"],["0.875","rgba(172,220,52,1)"],["0.916666666666667","rgba(199,225,42,1)"],["0.958333333333333","rgba(226,228,40,1)"],["1","rgba(253,231,37,1)"]],"showscale":true,"color":[2.0441769369888192,9.8950954928041384],"line":{"color":"rgba(255,127,14,1)"}},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+<p>Interactive Plotly scatter plot of age vs performance, with experience shown by color</p>
+</div>
+</div>
+<p><strong>Narrative (Plotly scatter):</strong></p>
+<p>The interactive scatter plot lets us zoom in on different age ranges using the range slider. Points are coloured by years of experience, so older and more experienced players are easy to spot. Performance scores mostly fall in a middle range, and the densest cluster of strong scores appears in the early twenties age range for players with around five to seven years of experience. There are only a few points at older ages and they do not clearly outperform the younger group, which supports the idea that the peak of an esports career comes relatively early.</p>
+<p><strong>Conclusion for Question 1 – age and performance:</strong></p>
+<p>Combining the histogram and the scatter plot, Question 1 indicates that the esports career arc is compressed: players accumulate a few years of experience, reach high performance in their early twenties, and then relatively few remain in the top tier as they get older.</p>
+<hr>
+</section>
+</section>
+<section id="question-2-do-older-esports-titles-generate-more-total-prize-money" class="level2">
+<h2 class="anchored" data-anchor-id="question-2-do-older-esports-titles-generate-more-total-prize-money">Question 2 – Do older esports titles generate more total prize money?</h2>
+<p><strong>Question 2:</strong><br>
+<em>Among major esports games, is there a relationship between how long a game has been around and the total prize money it has generated?</em></p>
+<p>We now turn to the game level Kaggle dataset, which contains total earnings and release years for a variety of esports titles.</p>
+<section id="prepare-data-and-summary-for-game-age-and-earnings" class="level3">
+<h3 class="anchored" data-anchor-id="prepare-data-and-summary-for-game-age-and-earnings">2.1 Prepare data and summary for game age and earnings</h3>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Question 2: prepare game level data with earnings in millions</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="co"># and compute overall summaries</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>games_q2 <span class="ot">&lt;-</span> games <span class="sc">%&gt;%</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">total_earnings_m =</span> total_earnings_usd <span class="sc">/</span> <span class="fl">1e6</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>games_q2 <span class="sc">%&gt;%</span></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">n_games         =</span> <span class="fu">n</span>(),</span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean_game_age   =</span> <span class="fu">mean</span>(game_age_years, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean_earnings_m =</span> <span class="fu">mean</span>(total_earnings_m, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">max_earnings_m  =</span> <span class="fu">max</span>(total_earnings_m, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 4
+  n_games mean_game_age mean_earnings_m max_earnings_m
+    &lt;int&gt;         &lt;dbl&gt;           &lt;dbl&gt;          &lt;dbl&gt;
+1     669          12.2            2.83           360.</code></pre>
+</div>
+</div>
+<p><strong>Narrative (summary for games):</strong></p>
+<p>The summary shows that there are many different esports titles in this dataset. On average, a game has been out for more than a decade, with mean total prize money in the low millions of dollars. However, the maximum total prize pool is much larger, so prize money is clearly uneven. Looking at game age against total earnings helps us see whether older games systematically accumulate more money.</p>
+</section>
+<section id="scatterplot-game-age-vs-total-earnings" class="level3">
+<h3 class="anchored" data-anchor-id="scatterplot-game-age-vs-total-earnings">2.2 Scatterplot – Game age vs total earnings</h3>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Question 2: scatter plot of game age vs total earnings, with a smooth trend line</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(games_q2, <span class="fu">aes</span>(<span class="at">x =</span> game_age_years, <span class="at">y =</span> total_earnings_m)) <span class="sc">+</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.7</span>, <span class="at">color =</span> <span class="st">"#1f78b4"</span>) <span class="sc">+</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"loess"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>, <span class="at">color =</span> <span class="st">"#e31a1c"</span>) <span class="sc">+</span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Do Older Games Earn More Prize Money?"</span>,</span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">x     =</span> <span class="st">"Game age (years since release)"</span>,</span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">y     =</span> <span class="st">"Total earnings (millions of USD)"</span></span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="group9_final_project_files/figure-html/q2-age-vs-earnings-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption>Relationship between game age and total earnings (in millions of USD)</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>Narrative (scatter):</strong></p>
+<p>Each point represents a game, positioned by how long it has been out and how much total prize money it has generated. Most titles are clustered below twenty million dollars in total earnings, even when they have been around for ten to fifteen years. A small number of games stand out as clear outliers with much larger cumulative prize pools. The smooth trend line rises from very young games to middle aged titles and then flattens out, which suggests that time in the market helps but only a minority of games manage to convert longevity into very large prize pools.</p>
+</section>
+<section id="kableextra-table-top-10-games-by-total-earnings" class="level3">
+<h3 class="anchored" data-anchor-id="kableextra-table-top-10-games-by-total-earnings">2.3 kableExtra table – Top 10 games by total earnings</h3>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Question 2: show the top 10 games by total prize money using kableExtra</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="co"># This satisfies the styled table requirement for Duy's section</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>top10_games <span class="ot">&lt;-</span> games_q2 <span class="sc">%&gt;%</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(total_earnings_m)) <span class="sc">%&gt;%</span></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_head</span>(<span class="at">n =</span> <span class="dv">10</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>    game,</span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>    release_year,</span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>    game_age_years,</span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>    total_earnings_m,</span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>    total_players,</span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>    total_tournaments</span>
+<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a>top10_games <span class="sc">%&gt;%</span></span>
+<span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb15-18"><a href="#cb15-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">total_earnings_m =</span> <span class="fu">round</span>(total_earnings_m, <span class="dv">2</span>)</span>
+<span id="cb15-19"><a href="#cb15-19" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb15-20"><a href="#cb15-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kbl</span>(</span>
+<span id="cb15-21"><a href="#cb15-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">col.names =</span> <span class="fu">c</span>(</span>
+<span id="cb15-22"><a href="#cb15-22" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Game"</span>, <span class="st">"Release year"</span>, <span class="st">"Game age (years)"</span>,</span>
+<span id="cb15-23"><a href="#cb15-23" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Total earnings (M USD)"</span>, <span class="st">"Total players"</span>, <span class="st">"Total tournaments"</span></span>
+<span id="cb15-24"><a href="#cb15-24" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb15-25"><a href="#cb15-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">caption =</span> <span class="st">"Top 10 esports titles by total prize money"</span></span>
+<span id="cb15-26"><a href="#cb15-26" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb15-27"><a href="#cb15-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_paper</span>(<span class="at">full_width =</span> <span class="cn">FALSE</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb15-28"><a href="#cb15-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">row_spec</span>(<span class="dv">1</span>, <span class="at">bold =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb15-29"><a href="#cb15-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_styling</span>(<span class="at">position =</span> <span class="st">"center"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<table class="lightable-paper table caption-top" data-quarto-postprocess="true">
+<caption>Top 10 esports titles by total prize money</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Game</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Release year</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Game age (years)</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Total earnings (M USD)</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Total players</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Total tournaments</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left; font-weight: bold;">Dota 2</td>
+<td style="text-align: right; font-weight: bold;">2013</td>
+<td style="text-align: right; font-weight: bold;">12</td>
+<td style="text-align: right; font-weight: bold;">360.46</td>
+<td style="text-align: right; font-weight: bold;">4980</td>
+<td style="text-align: right; font-weight: bold;">1934</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Fortnite</td>
+<td style="text-align: right;">2017</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">191.01</td>
+<td style="text-align: right;">9535</td>
+<td style="text-align: right;">2291</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Counter-Strike: Global Offensive</td>
+<td style="text-align: right;">2012</td>
+<td style="text-align: right;">13</td>
+<td style="text-align: right;">162.49</td>
+<td style="text-align: right;">16518</td>
+<td style="text-align: right;">7033</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">League of Legends</td>
+<td style="text-align: right;">2009</td>
+<td style="text-align: right;">16</td>
+<td style="text-align: right;">113.60</td>
+<td style="text-align: right;">9588</td>
+<td style="text-align: right;">3000</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Arena of Valor</td>
+<td style="text-align: right;">2015</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">98.75</td>
+<td style="text-align: right;">2231</td>
+<td style="text-align: right;">179</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PLAYERUNKNOWN'S BATTLEGROUNDS Mobile</td>
+<td style="text-align: right;">2017</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">87.32</td>
+<td style="text-align: right;">4263</td>
+<td style="text-align: right;">341</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PLAYERUNKNOWN’S BATTLEGROUNDS</td>
+<td style="text-align: right;">2017</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">64.20</td>
+<td style="text-align: right;">3967</td>
+<td style="text-align: right;">631</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Rainbow Six Siege</td>
+<td style="text-align: right;">2015</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">48.13</td>
+<td style="text-align: right;">3070</td>
+<td style="text-align: right;">568</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">StarCraft II</td>
+<td style="text-align: right;">2010</td>
+<td style="text-align: right;">15</td>
+<td style="text-align: right;">42.69</td>
+<td style="text-align: right;">2280</td>
+<td style="text-align: right;">7510</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Rocket League</td>
+<td style="text-align: right;">2015</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">42.26</td>
+<td style="text-align: right;">6884</td>
+<td style="text-align: right;">4542</td>
+</tr>
+</tbody>
+</table>
+
+
+<p><strong>Narrative (table):</strong></p>
+<p>The table lists the ten games with the largest prize pools. A small set of titles produce very large cumulative earnings, while most other games have much smaller totals. These games are usually mature, which supports the idea that successful long running titles accumulate massive prize pools over time. At the same time, one or two newer titles can appear on the list, showing that a game with strong backing can catch up quickly.</p>
+<p><strong>Conclusion for Question 2 – game age vs earnings:</strong></p>
+<p>Overall, Question 2 suggests that time in the market matters: older games have had more opportunities to host tournaments and distribute prize money. However, success is not guaranteed; only certain titles translate longevity into sustained earnings.</p>
+<hr>
+</section>
+</section>
+<section id="question-3-which-games-dominate-the-top-earning-players" class="level2">
+<h2 class="anchored" data-anchor-id="question-3-which-games-dominate-the-top-earning-players">Question 3 – Which games dominate the top earning players?</h2>
+<p><strong>Question 3:</strong><br>
+<em>Among the top 1000 highest earning players, which games appear most often and capture the largest share of total player earnings?</em></p>
+<p>Here we use the scraped EsportsEarnings dataset and create a pipeline with at least four dplyr verbs.</p>
+<section id="four-pipe-wrangling-aggregate-players-by-highest-paying-game" class="level3">
+<h3 class="anchored" data-anchor-id="four-pipe-wrangling-aggregate-players-by-highest-paying-game">3.1 Four pipe wrangling: aggregate players by highest paying game</h3>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Question 3: Which games dominate the top earning players?</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Pipeline with at least 4 dplyr verbs:</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="co">#   group_by(), summarise(), mutate(), filter() (arrange() is extra)</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Dataset: esports_players_top1000_clean.csv (scraped)</span></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>players_game_summary <span class="ot">&lt;-</span> players <span class="sc">%&gt;%</span></span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(highest_paying_game) <span class="sc">%&gt;%</span></span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">n_players      =</span> <span class="fu">n</span>(),</span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">total_earnings =</span> <span class="fu">sum</span>(total_overall_usd, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">.groups        =</span> <span class="st">"drop"</span></span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">total_earnings_m =</span> total_earnings <span class="sc">/</span> <span class="fl">1e6</span></span>
+<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(n_players <span class="sc">&gt;=</span> <span class="dv">5</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(total_earnings_m))</span>
+<span id="cb16-18"><a href="#cb16-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-19"><a href="#cb16-19" aria-hidden="true" tabindex="-1"></a>players_game_summary</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 29 × 4
+   highest_paying_game                 n_players total_earnings total_earnings_m
+   &lt;chr&gt;                                   &lt;int&gt;          &lt;dbl&gt;            &lt;dbl&gt;
+ 1 "Dota 2"                                  203     323485229.            323. 
+ 2 "Counter-Strike: Global Offensive"        121      94929534.             94.9
+ 3 "Fortnite"                                 87      68122861.             68.1
+ 4 "Arena of Valor"                           65      54909478.             54.9
+ 5 "League of Legends"                        73      40679562.             40.7
+ 6 "PLAYERUNKNOWN'S BATTLEGROUNDS Mob…        51      25583769.             25.6
+ 7 "StarCraft II"                             37      23150349.             23.2
+ 8 "PLAYERUNKNOWNâ\u0080\u0099S BATTL…        41      22587512.             22.6
+ 9 "Rocket League"                            38      19133844.             19.1
+10 "Rainbow Six Siege"                        36      16030899.             16.0
+# ℹ 19 more rows</code></pre>
+</div>
+</div>
+<p><strong>Narrative (aggregated view):</strong></p>
+<p>This table shows how many of the top 1000 players list each game as their highest paying title and how much total prize money those players have generated. A few games account for a very large share of earnings among the top players. The four step pipeline uses <code>group_by</code>, <code>summarise</code>, <code>mutate</code>, and <code>filter</code> to transform the scraped player data into a concise game level view that highlights this concentration.</p>
+</section>
+<section id="bar-chart-top-games-by-total-earnings-top-1000-players" class="level3">
+<h3 class="anchored" data-anchor-id="bar-chart-top-games-by-total-earnings-top-1000-players">3.2 Bar chart – Top games by total earnings (top 1000 players)</h3>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Question 3: bar chart of the top 10 games by total earnings</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>players_game_summary <span class="sc">%&gt;%</span></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_head</span>(<span class="at">n =</span> <span class="dv">10</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="fu">reorder</span>(highest_paying_game, total_earnings_m),</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> total_earnings_m</span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>  )) <span class="sc">+</span></span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">fill =</span> <span class="st">"#1f78b4"</span>) <span class="sc">+</span></span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Top Games by Total Earnings (Top 1000 Players)"</span>,</span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">x     =</span> <span class="st">"Game"</span>,</span>
+<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">y     =</span> <span class="st">"Total earnings (millions of USD)"</span></span>
+<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="group9_final_project_files/figure-html/q3-top-games-bar-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption>Top games by total earnings among the top 1000 players (scraped data)</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>Narrative (bar chart):</strong></p>
+<p>The bar chart makes the concentration visually obvious. One game clearly leads in terms of total earnings among the top 1000 players, with its bar much longer than most other titles. The next group of games forms a second tier with substantial but noticeably smaller totals. Below that, earnings drop off quickly, so many games contribute only a small slice of the overall prize pool.</p>
+</section>
+<section id="kableextra-table-top-15-individual-players" class="level3">
+<h3 class="anchored" data-anchor-id="kableextra-table-top-15-individual-players">3.3 kableExtra table – Top 15 individual players</h3>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Question 3: formatted table of the top 15 individual players by total earnings</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>top15_players <span class="ot">&lt;-</span> players <span class="sc">%&gt;%</span></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(total_overall_usd)) <span class="sc">%&gt;%</span></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_head</span>(<span class="at">n =</span> <span class="dv">15</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">total_overall_m =</span> <span class="fu">round</span>(total_overall_usd <span class="sc">/</span> <span class="fl">1e6</span>, <span class="dv">2</span>),</span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">total_game_m    =</span> <span class="fu">round</span>(total_game_usd <span class="sc">/</span> <span class="fl">1e6</span>, <span class="dv">2</span>)</span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(</span>
+<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a>    rank,</span>
+<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a>    player_id,</span>
+<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a>    player_name,</span>
+<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a>    highest_paying_game,</span>
+<span id="cb19-15"><a href="#cb19-15" aria-hidden="true" tabindex="-1"></a>    total_overall_m,</span>
+<span id="cb19-16"><a href="#cb19-16" aria-hidden="true" tabindex="-1"></a>    total_game_m,</span>
+<span id="cb19-17"><a href="#cb19-17" aria-hidden="true" tabindex="-1"></a>    pct_of_total_num</span>
+<span id="cb19-18"><a href="#cb19-18" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb19-19"><a href="#cb19-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-20"><a href="#cb19-20" aria-hidden="true" tabindex="-1"></a>top15_players <span class="sc">%&gt;%</span></span>
+<span id="cb19-21"><a href="#cb19-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kbl</span>(</span>
+<span id="cb19-22"><a href="#cb19-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">col.names =</span> <span class="fu">c</span>(</span>
+<span id="cb19-23"><a href="#cb19-23" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Rank"</span>,</span>
+<span id="cb19-24"><a href="#cb19-24" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Player ID"</span>,</span>
+<span id="cb19-25"><a href="#cb19-25" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Player name"</span>,</span>
+<span id="cb19-26"><a href="#cb19-26" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Highest paying game"</span>,</span>
+<span id="cb19-27"><a href="#cb19-27" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Total earnings (M USD)"</span>,</span>
+<span id="cb19-28"><a href="#cb19-28" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Game earnings (M USD)"</span>,</span>
+<span id="cb19-29"><a href="#cb19-29" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Game % of total"</span></span>
+<span id="cb19-30"><a href="#cb19-30" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb19-31"><a href="#cb19-31" aria-hidden="true" tabindex="-1"></a>    <span class="at">caption =</span> <span class="st">"Top 15 esports players by total career earnings (scraped from EsportsEarnings)"</span></span>
+<span id="cb19-32"><a href="#cb19-32" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb19-33"><a href="#cb19-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_paper</span>(<span class="at">full_width =</span> <span class="cn">FALSE</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb19-34"><a href="#cb19-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_styling</span>(<span class="at">position =</span> <span class="st">"center"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb19-35"><a href="#cb19-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">column_spec</span>(<span class="dv">5</span><span class="sc">:</span><span class="dv">6</span>, <span class="at">bold =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<table class="lightable-paper table caption-top" data-quarto-postprocess="true">
+<caption>Top 15 esports players by total career earnings (scraped from EsportsEarnings)</caption>
+<thead>
+<tr class="header">
+<th style="text-align: right;" data-quarto-table-cell-role="th">Rank</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Player ID</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Player name</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Highest paying game</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Total earnings (M USD)</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Game earnings (M USD)</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Game % of total</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">N0tail</td>
+<td style="text-align: left;">Johan Sundstein</td>
+<td style="text-align: left;">Dota 2</td>
+<td style="text-align: right; font-weight: bold;">7.18</td>
+<td style="text-align: right; font-weight: bold;">7.17</td>
+<td style="text-align: right;">99.84</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">JerAx</td>
+<td style="text-align: left;">Jesse Vainikka</td>
+<td style="text-align: left;">Dota 2</td>
+<td style="text-align: right; font-weight: bold;">6.49</td>
+<td style="text-align: right; font-weight: bold;">6.49</td>
+<td style="text-align: right;">99.99</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">3</td>
+<td style="text-align: left;">Miposhka</td>
+<td style="text-align: left;">Yaroslav Naidenov</td>
+<td style="text-align: left;">Dota 2</td>
+<td style="text-align: right; font-weight: bold;">6.23</td>
+<td style="text-align: right; font-weight: bold;">6.23</td>
+<td style="text-align: right;">100.00</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4</td>
+<td style="text-align: left;">ana</td>
+<td style="text-align: left;">Anathan Pham</td>
+<td style="text-align: left;">Dota 2</td>
+<td style="text-align: right; font-weight: bold;">6.02</td>
+<td style="text-align: right; font-weight: bold;">6.02</td>
+<td style="text-align: right;">100.00</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">5</td>
+<td style="text-align: left;">Ceb</td>
+<td style="text-align: left;">SÃ©bastien Debs</td>
+<td style="text-align: left;">Dota 2</td>
+<td style="text-align: right; font-weight: bold;">5.95</td>
+<td style="text-align: right; font-weight: bold;">5.95</td>
+<td style="text-align: right;">100.00</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">6</td>
+<td style="text-align: left;">Yatoro</td>
+<td style="text-align: left;">Ilya Mulyarchuk</td>
+<td style="text-align: left;">Dota 2</td>
+<td style="text-align: right; font-weight: bold;">5.93</td>
+<td style="text-align: right; font-weight: bold;">5.93</td>
+<td style="text-align: right;">100.00</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">7</td>
+<td style="text-align: left;">Collapse</td>
+<td style="text-align: left;">Magomed Khalilov</td>
+<td style="text-align: left;">Dota 2</td>
+<td style="text-align: right; font-weight: bold;">5.93</td>
+<td style="text-align: right; font-weight: bold;">5.93</td>
+<td style="text-align: right;">100.00</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">8</td>
+<td style="text-align: left;">Topson</td>
+<td style="text-align: left;">Topias Taavitsainen</td>
+<td style="text-align: left;">Dota 2</td>
+<td style="text-align: right; font-weight: bold;">5.90</td>
+<td style="text-align: right; font-weight: bold;">5.90</td>
+<td style="text-align: right;">100.00</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">9</td>
+<td style="text-align: left;">Mira</td>
+<td style="text-align: left;">Miroslaw Kolpakov</td>
+<td style="text-align: left;">Dota 2</td>
+<td style="text-align: right; font-weight: bold;">5.64</td>
+<td style="text-align: right; font-weight: bold;">5.64</td>
+<td style="text-align: right;">100.00</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">10</td>
+<td style="text-align: left;">KuroKy</td>
+<td style="text-align: left;">Kuro Takhasomi</td>
+<td style="text-align: left;">Dota 2</td>
+<td style="text-align: right; font-weight: bold;">5.30</td>
+<td style="text-align: right; font-weight: bold;">5.29</td>
+<td style="text-align: right;">99.95</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">11</td>
+<td style="text-align: left;">Miracle-</td>
+<td style="text-align: left;">Amer Al-Barkawi</td>
+<td style="text-align: left;">Dota 2</td>
+<td style="text-align: right; font-weight: bold;">4.91</td>
+<td style="text-align: right; font-weight: bold;">4.91</td>
+<td style="text-align: right;">100.00</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">12</td>
+<td style="text-align: left;">Matumbaman</td>
+<td style="text-align: left;">Lasse Urpalainen</td>
+<td style="text-align: left;">Dota 2</td>
+<td style="text-align: right; font-weight: bold;">4.87</td>
+<td style="text-align: right; font-weight: bold;">4.87</td>
+<td style="text-align: right;">100.00</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">13</td>
+<td style="text-align: left;">MinD_ContRoL</td>
+<td style="text-align: left;">Ivan Ivanov</td>
+<td style="text-align: left;">Dota 2</td>
+<td style="text-align: right; font-weight: bold;">4.70</td>
+<td style="text-align: right; font-weight: bold;">4.70</td>
+<td style="text-align: right;">100.00</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">14</td>
+<td style="text-align: left;">TORONTOTOKYO</td>
+<td style="text-align: left;">Alexander Khertek</td>
+<td style="text-align: left;">Dota 2</td>
+<td style="text-align: right; font-weight: bold;">4.54</td>
+<td style="text-align: right; font-weight: bold;">4.54</td>
+<td style="text-align: right;">100.00</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">15</td>
+<td style="text-align: left;">GH</td>
+<td style="text-align: left;">Maroun Merhej</td>
+<td style="text-align: left;">Dota 2</td>
+<td style="text-align: right; font-weight: bold;">4.36</td>
+<td style="text-align: right; font-weight: bold;">4.36</td>
+<td style="text-align: right;">100.00</td>
+</tr>
+</tbody>
+</table>
+
+
+<p><strong>Narrative (top players table):</strong></p>
+<p>The table lists individual players with the largest career earnings. The top earners each focus on a small set of games, and for almost all of them game specific earnings are essentially all of their total income. This reinforces the idea that earnings at the top of esports are not only concentrated in a few players but also in a few games. Switching games mid career could be risky if prize pools and competitive scenes differ greatly.</p>
+<p><strong>Conclusion for Question 3 – domination of a few games:</strong></p>
+<p>Question 3 shows that the earnings landscape is highly concentrated: a small set of games and a relatively small number of players capture a large fraction of total prize money. For an aspiring professional, this means that choosing which game to focus on is almost as important as individual skill.</p>
+<hr>
+</section>
+</section>
+</section>
+<section id="overall-conclusion-for-duys-esports-section" class="level1">
+<h1>Overall Conclusion for Duy’s Esports Section</h1>
+<p>Across my three questions, the esports data paints a consistent picture:</p>
+<ol type="1">
+<li><p><strong>Age and experience:</strong><br>
+Players in our dataset are mostly in their late teens and early twenties, with just a few years of experience. Performance seems to peak within this narrow window, which suggests that esports careers tend to be intense but short.</p></li>
+<li><p><strong>Game age and prize money:</strong><br>
+Long running titles usually have higher cumulative prize pools, but only some games convert longevity into sustained earnings. A few successful titles dominate the market, while many others remain relatively small.</p></li>
+<li><p><strong>Concentration among games and players:</strong><br>
+Among the top 1000 earners, prize money is heavily concentrated in a short list of games and a small group of players. Almost all of the biggest earners rely on one primary game for the majority of their income.</p></li>
+</ol>
+<p>These results show that esports careers offer high potential rewards but also significant risk and a limited time window. In the full Group 9 report, my esports findings are compared with the software engineer sections to understand how these patterns differ from more traditional technical careers in terms of income stability, career length, and long term opportunities.</p>
+<hr>
+</section>
+<section id="bat-orgils-software-engineer-salary-section-group-9" class="level1">
+<h1>Bat-Orgil’s Software Engineer Salary Section (Group 9)</h1>
+<p><strong>This section (coding and analysis) is written by: Bat-Orgil Erdenebat.</strong></p>
+<p>In our group project we compare the financial realities of two careers: professional esports and software engineering. My part focuses on the software engineer side. I use salary data for software developers in the United States to understand how pay is distributed and how concentrated the top earnings are.</p>
+<p>My section is built around three related questions:</p>
+<ol type="1">
+<li><strong>Q1. How do median software engineer salaries vary across states in the United States.</strong></li>
+<li><strong>Q2. How much of the total median salary mass is concentrated in the highest paying states.</strong></li>
+<li><strong>Q3. What geographic patterns appear in software engineer pay levels, and how do different percentiles compare across states.</strong></li>
+</ol>
+<p>These questions together help answer the group level question about how realistic and stable software engineer earnings are compared to the very concentrated prize money at the top of esports.</p>
+<section id="data-and-setup-for-software-engineer-salaries" class="level2">
+<h2 class="anchored" data-anchor-id="data-and-setup-for-software-engineer-salaries">Data and setup for software engineer salaries</h2>
+<p>In this project the salary data was scraped from O*NET and stored as <code>data/software_salaries_html_tables.csv</code>. In this section I read that data, clean the salary columns, and create a statewide summary that is reused in all visualizations.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Q0: load libraries for software engineer salary analysis</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Question context: This chunk supports Q1, Q2, and Q3 by loading required packages.</span></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Note: packages are already loaded in the global setup using pacman::p_load,</span></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="co"># but the library() calls are safe if run again.</span></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(kableExtra)</span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(scales)</span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(usmap)</span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(leaflet)</span>
+<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(maps)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Q0: read and clean software engineer salary data for all states</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Question context: prepare a clean statewide salary table for Q1, Q2, and Q3.</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>salaries_raw <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>  <span class="st">"data/software_salaries_html_tables.csv"</span>,</span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">show_col_types =</span> <span class="cn">FALSE</span></span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>cleaned_salaries <span class="ot">&lt;-</span> salaries_raw <span class="sc">%&gt;%</span></span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">P10    =</span> <span class="fu">parse_number</span>(<span class="st">`</span><span class="at">Annual Low (10%)</span><span class="st">`</span>),</span>
+<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">P25    =</span> <span class="fu">parse_number</span>(<span class="st">`</span><span class="at">Annual QL (25%)</span><span class="st">`</span>),</span>
+<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">Median =</span> <span class="fu">parse_number</span>(<span class="st">`</span><span class="at">Annual Median (50%)</span><span class="st">`</span>),</span>
+<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">P75    =</span> <span class="fu">parse_number</span>(<span class="st">`</span><span class="at">Annual QU (75%)</span><span class="st">`</span>),</span>
+<span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">P90    =</span> <span class="fu">parse_number</span>(<span class="st">`</span><span class="at">Annual High (90%)</span><span class="st">`</span>),</span>
+<span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">Location      =</span> <span class="fu">str_trim</span>(Location),</span>
+<span id="cb21-17"><a href="#cb21-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">Location_Type =</span> <span class="fu">case_when</span>(</span>
+<span id="cb21-18"><a href="#cb21-18" aria-hidden="true" tabindex="-1"></a>      Location <span class="sc">==</span> <span class="st">"United States"</span> <span class="sc">~</span> <span class="st">"National"</span>,</span>
+<span id="cb21-19"><a href="#cb21-19" aria-hidden="true" tabindex="-1"></a>      Location <span class="sc">==</span> State_Name      <span class="sc">~</span> <span class="st">"Statewide"</span>,</span>
+<span id="cb21-20"><a href="#cb21-20" aria-hidden="true" tabindex="-1"></a>      <span class="fu">str_detect</span>(Location, <span class="fu">regex</span>(<span class="st">"nonmetropolitan"</span>, <span class="at">ignore_case =</span> <span class="cn">TRUE</span>)) <span class="sc">~</span> <span class="st">"Non-metropolitan"</span>,</span>
+<span id="cb21-21"><a href="#cb21-21" aria-hidden="true" tabindex="-1"></a>      <span class="cn">TRUE</span>                        <span class="sc">~</span> <span class="st">"Metropolitan"</span></span>
+<span id="cb21-22"><a href="#cb21-22" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb21-23"><a href="#cb21-23" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb21-24"><a href="#cb21-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(</span>
+<span id="cb21-25"><a href="#cb21-25" aria-hidden="true" tabindex="-1"></a>    Location, Location_Type,</span>
+<span id="cb21-26"><a href="#cb21-26" aria-hidden="true" tabindex="-1"></a>    State, State_Name,</span>
+<span id="cb21-27"><a href="#cb21-27" aria-hidden="true" tabindex="-1"></a>    P10, P25, Median, P75, P90</span>
+<span id="cb21-28"><a href="#cb21-28" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb21-29"><a href="#cb21-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-30"><a href="#cb21-30" aria-hidden="true" tabindex="-1"></a>statewide_summary <span class="ot">&lt;-</span> cleaned_salaries <span class="sc">%&gt;%</span></span>
+<span id="cb21-31"><a href="#cb21-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Location_Type <span class="sc">==</span> <span class="st">"Statewide"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb21-32"><a href="#cb21-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb21-33"><a href="#cb21-33" aria-hidden="true" tabindex="-1"></a>    <span class="at">state =</span> State   <span class="co"># lowercase state abbreviation for usmap</span></span>
+<span id="cb21-34"><a href="#cb21-34" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb21-35"><a href="#cb21-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(</span>
+<span id="cb21-36"><a href="#cb21-36" aria-hidden="true" tabindex="-1"></a>    state,          <span class="co"># required by usmap</span></span>
+<span id="cb21-37"><a href="#cb21-37" aria-hidden="true" tabindex="-1"></a>    State,          <span class="co"># original abbreviation</span></span>
+<span id="cb21-38"><a href="#cb21-38" aria-hidden="true" tabindex="-1"></a>    State_Name,</span>
+<span id="cb21-39"><a href="#cb21-39" aria-hidden="true" tabindex="-1"></a>    P10, P25, Median, P75, P90</span>
+<span id="cb21-40"><a href="#cb21-40" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb21-41"><a href="#cb21-41" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(Median))</span>
+<span id="cb21-42"><a href="#cb21-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-43"><a href="#cb21-43" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(statewide_summary)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 8
+  state State State_Name       P10    P25 Median    P75    P90
+  &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;          &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;
+1 CA    CA    California    103950 134820 170910 212280 239200
+2 WA    WA    Washington    102630 132870 166910 207370 239200
+3 NY    NY    New York       85520 119530 161260 194790 223480
+4 MA    MA    Massachusetts  99360 125430 150520 172680 208220
+5 MD    MD    Maryland       86490 107670 137890 175900 218190
+6 OR    OR    Oregon         92120 110080 135260 165940 211750</code></pre>
+</div>
+</div>
+<p>This cleaning step converts salary percentiles to numeric values, classifies each record by location type, and produces a table with one row per state. The object <code>statewide_summary</code> is used in all three of my questions and in every visualization below.</p>
+<hr>
+</section>
+<section id="question-1-how-do-median-salaries-vary-across-states" class="level2">
+<h2 class="anchored" data-anchor-id="question-1-how-do-median-salaries-vary-across-states">Question 1 – How do median salaries vary across states?</h2>
+<p><strong>Q1. How do median software engineer salaries vary across states in the United States.</strong></p>
+<p>In this question I focus on how median salary levels differ from state to state. I use a bar chart to show the full distribution of medians across all states.</p>
+<section id="q1-visualization-bar-chart-of-median-salary-by-state" class="level3">
+<h3 class="anchored" data-anchor-id="q1-visualization-bar-chart-of-median-salary-by-state">Q1 visualization – Bar chart of median salary by state</h3>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Q1: bar chart of median software engineer salary by state</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Question 1: How do median salaries vary across states.</span></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>median_bar_plot <span class="ot">&lt;-</span> statewide_summary <span class="sc">%&gt;%</span></span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">reorder</span>(State_Name, Median), <span class="at">y =</span> Median)) <span class="sc">+</span></span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">title    =</span> <span class="st">"Median software engineer salary by state"</span>,</span>
+<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Statewide estimates from O*NET Online"</span>,</span>
+<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">x        =</span> <span class="st">"State"</span>,</span>
+<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">y        =</span> <span class="st">"Median salary (USD)"</span></span>
+<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> dollar) <span class="sc">+</span></span>
+<span id="cb23-15"><a href="#cb23-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb23-16"><a href="#cb23-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-17"><a href="#cb23-17" aria-hidden="true" tabindex="-1"></a>median_bar_plot</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="group9_final_project_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="q1-narrative-and-conclusion" class="level3">
+<h3 class="anchored" data-anchor-id="q1-narrative-and-conclusion">Q1 narrative and conclusion</h3>
+<p>The bar chart shows that some states clearly pay more than others, but most states are in the same general range rather than being extremely low or extremely high. The ranking starts with states such as California and Washington near the top and moves down to lower paying states, but there is a smooth gradient instead of one or two extreme outliers. This suggests that software engineer salaries in the United States are spread across many states with reasonably strong median pay, rather than being limited to only one or two locations.</p>
+<hr>
+</section>
+</section>
+<section id="question-2-how-concentrated-is-income-among-the-highest-paying-states" class="level2">
+<h2 class="anchored" data-anchor-id="question-2-how-concentrated-is-income-among-the-highest-paying-states">Question 2 – How concentrated is income among the highest paying states?</h2>
+<p><strong>Q2. How much of the total median salary mass is concentrated in the highest paying states.</strong></p>
+<p>In this question I study how much of the overall median salary is accounted for by the top states. I create a four pipe dplyr pipeline that ranks states by median salary and computes each state share and cumulative share of the total.</p>
+<section id="q2-wrangling-four-pipe-concentration-pipeline" class="level3">
+<h3 class="anchored" data-anchor-id="q2-wrangling-four-pipe-concentration-pipeline">Q2 wrangling – Four pipe concentration pipeline</h3>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Q2: compute rank and cumulative share of total median salary by state</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Question 2: How much of the total median salary mass is concentrated in the top states.</span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="co"># This pipeline uses four different dplyr verbs: filter, arrange, mutate, and select.</span></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>salary_concentration <span class="ot">&lt;-</span> statewide_summary <span class="sc">%&gt;%</span></span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(Median)) <span class="sc">%&gt;%</span></span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(Median)) <span class="sc">%&gt;%</span></span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">rank      =</span> <span class="fu">row_number</span>(),</span>
+<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">share     =</span> Median <span class="sc">/</span> <span class="fu">sum</span>(Median),</span>
+<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">cum_share =</span> <span class="fu">cumsum</span>(share)</span>
+<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb24-13"><a href="#cb24-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(State, State_Name, Median, rank, share, cum_share)</span>
+<span id="cb24-14"><a href="#cb24-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-15"><a href="#cb24-15" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(salary_concentration)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 6
+  State State_Name    Median  rank  share cum_share
+  &lt;chr&gt; &lt;chr&gt;          &lt;dbl&gt; &lt;int&gt;  &lt;dbl&gt;     &lt;dbl&gt;
+1 CA    California    170910     1 0.0289    0.0289
+2 WA    Washington    166910     2 0.0282    0.0571
+3 NY    New York      161260     3 0.0272    0.0843
+4 MA    Massachusetts 150520     4 0.0254    0.110 
+5 MD    Maryland      137890     5 0.0233    0.133 
+6 OR    Oregon        135260     6 0.0229    0.156 </code></pre>
+</div>
+</div>
+</section>
+<section id="q2-visualization-kableextra-table-of-top-states-and-their-share" class="level3">
+<h3 class="anchored" data-anchor-id="q2-visualization-kableextra-table-of-top-states-and-their-share">Q2 visualization – kableExtra table of top states and their share</h3>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Q2: kableExtra table of top 10 states by median salary and income share</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Question 2: show how much of the total median salary is concentrated in the highest paying states.</span></span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>salary_concentration <span class="sc">%&gt;%</span></span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Median salary (USD)</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">dollar</span>(Median),</span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Share of total</span><span class="st">`</span>      <span class="ot">=</span> <span class="fu">percent</span>(share, <span class="at">accuracy =</span> <span class="fl">0.1</span>),</span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Cumulative share</span><span class="st">`</span>    <span class="ot">=</span> <span class="fu">percent</span>(cum_share, <span class="at">accuracy =</span> <span class="fl">0.1</span>)</span>
+<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(</span>
+<span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">Rank =</span> rank,</span>
+<span id="cb26-12"><a href="#cb26-12" aria-hidden="true" tabindex="-1"></a>    State,</span>
+<span id="cb26-13"><a href="#cb26-13" aria-hidden="true" tabindex="-1"></a>    State_Name,</span>
+<span id="cb26-14"><a href="#cb26-14" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Median salary (USD)</span><span class="st">`</span>,</span>
+<span id="cb26-15"><a href="#cb26-15" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Share of total</span><span class="st">`</span>,</span>
+<span id="cb26-16"><a href="#cb26-16" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Cumulative share</span><span class="st">`</span></span>
+<span id="cb26-17"><a href="#cb26-17" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb26-18"><a href="#cb26-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb26-19"><a href="#cb26-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(</span>
+<span id="cb26-20"><a href="#cb26-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">format  =</span> <span class="st">"html"</span>,</span>
+<span id="cb26-21"><a href="#cb26-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">caption =</span> <span class="st">"Top 10 states by median software engineer salary and share of total median pay"</span>,</span>
+<span id="cb26-22"><a href="#cb26-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">align   =</span> <span class="st">"c"</span></span>
+<span id="cb26-23"><a href="#cb26-23" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb26-24"><a href="#cb26-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_styling</span>(</span>
+<span id="cb26-25"><a href="#cb26-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">full_width        =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb26-26"><a href="#cb26-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">bootstrap_options =</span> <span class="fu">c</span>(<span class="st">"striped"</span>, <span class="st">"hover"</span>, <span class="st">"condensed"</span>)</span>
+<span id="cb26-27"><a href="#cb26-27" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb26-28"><a href="#cb26-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">row_spec</span>(<span class="dv">0</span>, <span class="at">bold =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<table class="table table-striped table-hover table-condensed caption-top table-sm small" data-quarto-postprocess="true">
+<caption>Top 10 states by median software engineer salary and share of total median pay</caption>
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: bold;">Rank</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: bold;">State</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: bold;">State_Name</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: bold;">Median salary (USD)</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: bold;">Share of total</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: bold;">Cumulative share</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">CA</td>
+<td style="text-align: center;">California</td>
+<td style="text-align: center;">$170,910</td>
+<td style="text-align: center;">2.9%</td>
+<td style="text-align: center;">2.9%</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">WA</td>
+<td style="text-align: center;">Washington</td>
+<td style="text-align: center;">$166,910</td>
+<td style="text-align: center;">2.8%</td>
+<td style="text-align: center;">5.7%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">NY</td>
+<td style="text-align: center;">New York</td>
+<td style="text-align: center;">$161,260</td>
+<td style="text-align: center;">2.7%</td>
+<td style="text-align: center;">8.4%</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">MA</td>
+<td style="text-align: center;">Massachusetts</td>
+<td style="text-align: center;">$150,520</td>
+<td style="text-align: center;">2.5%</td>
+<td style="text-align: center;">11.0%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">MD</td>
+<td style="text-align: center;">Maryland</td>
+<td style="text-align: center;">$137,890</td>
+<td style="text-align: center;">2.3%</td>
+<td style="text-align: center;">13.3%</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">OR</td>
+<td style="text-align: center;">Oregon</td>
+<td style="text-align: center;">$135,260</td>
+<td style="text-align: center;">2.3%</td>
+<td style="text-align: center;">15.6%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">DE</td>
+<td style="text-align: center;">Delaware</td>
+<td style="text-align: center;">$135,160</td>
+<td style="text-align: center;">2.3%</td>
+<td style="text-align: center;">17.9%</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">8</td>
+<td style="text-align: center;">VA</td>
+<td style="text-align: center;">Virginia</td>
+<td style="text-align: center;">$134,470</td>
+<td style="text-align: center;">2.3%</td>
+<td style="text-align: center;">20.1%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">9</td>
+<td style="text-align: center;">NH</td>
+<td style="text-align: center;">New Hampshire</td>
+<td style="text-align: center;">$132,420</td>
+<td style="text-align: center;">2.2%</td>
+<td style="text-align: center;">22.4%</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">NJ</td>
+<td style="text-align: center;">New Jersey</td>
+<td style="text-align: center;">$132,400</td>
+<td style="text-align: center;">2.2%</td>
+<td style="text-align: center;">24.6%</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+</section>
+<section id="q2-narrative-and-conclusion" class="level3">
+<h3 class="anchored" data-anchor-id="q2-narrative-and-conclusion">Q2 narrative and conclusion</h3>
+<p>From this table we see that the highest paying states do not capture an extreme share of the total median salary mass. The cumulative share grows gradually: even after the top ten states, the cumulative share is still well below a majority of the total. This means that there is not a tiny group of states hoarding most of the earning power. For a student, this supports the idea that software engineering is a broadly accessible high paying career, rather than one where only a few locations provide serious income.</p>
+<hr>
+</section>
+</section>
+<section id="question-3-what-geographic-patterns-appear-in-pay-levels-and-percentiles" class="level2">
+<h2 class="anchored" data-anchor-id="question-3-what-geographic-patterns-appear-in-pay-levels-and-percentiles">Question 3 – What geographic patterns appear in pay levels and percentiles?</h2>
+<p><strong>Q3. What geographic patterns appear in software engineer pay levels, and how do different percentiles compare across states.</strong></p>
+<p>In this question I look at how salaries vary across the map and how the lower and upper percentiles compare to the median. I use both a static US map and an interactive Leaflet widget to explore the geographic patterns.</p>
+<section id="q3-visualization-1-us-map-of-median-salary-by-state" class="level3">
+<h3 class="anchored" data-anchor-id="q3-visualization-1-us-map-of-median-salary-by-state">Q3 visualization 1 – US map of median salary by state</h3>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Q3: US map of median software engineer salary by state</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Question 3: What geographic patterns appear in software engineer pay levels.</span></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>us_salary_map <span class="ot">&lt;-</span> <span class="fu">plot_usmap</span>(</span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">data    =</span> statewide_summary,</span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">values  =</span> <span class="st">"Median"</span>,</span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">regions =</span> <span class="st">"states"</span></span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a>) <span class="sc">+</span></span>
+<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_continuous</span>(</span>
+<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">name  =</span> <span class="st">"Median salary"</span>,</span>
+<span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">label =</span> <span class="fu">dollar_format</span>()</span>
+<span id="cb27-12"><a href="#cb27-12" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb27-13"><a href="#cb27-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb27-14"><a href="#cb27-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">title    =</span> <span class="st">"Median software engineer salary by state"</span>,</span>
+<span id="cb27-15"><a href="#cb27-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Statewide salary estimates from O*NET Online"</span></span>
+<span id="cb27-16"><a href="#cb27-16" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb27-17"><a href="#cb27-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"right"</span>)</span>
+<span id="cb27-18"><a href="#cb27-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-19"><a href="#cb27-19" aria-hidden="true" tabindex="-1"></a>us_salary_map</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="group9_final_project_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="q3-visualization-2-leaflet-map-with-custom-markers" class="level3">
+<h3 class="anchored" data-anchor-id="q3-visualization-2-leaflet-map-with-custom-markers">Q3 visualization 2 – Leaflet map with custom markers</h3>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Q3: Leaflet map of software engineer salaries with custom markers</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Question 3: How do different salary percentiles compare across states in a geographic view.</span></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>state_centers <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(state.center) <span class="sc">%&gt;%</span></span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">State_Name =</span> state.name)</span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a>leaflet_data <span class="ot">&lt;-</span> statewide_summary <span class="sc">%&gt;%</span></span>
+<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(state_centers, <span class="at">by =</span> <span class="st">"State_Name"</span>)</span>
+<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a><span class="fu">leaflet</span>(leaflet_data) <span class="sc">%&gt;%</span></span>
+<span id="cb28-11"><a href="#cb28-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addProviderTiles</span>(providers<span class="sc">$</span>CartoDB.Positron) <span class="sc">%&gt;%</span></span>
+<span id="cb28-12"><a href="#cb28-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addAwesomeMarkers</span>(</span>
+<span id="cb28-13"><a href="#cb28-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">lng  =</span> <span class="sc">~</span>x,</span>
+<span id="cb28-14"><a href="#cb28-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">lat  =</span> <span class="sc">~</span>y,</span>
+<span id="cb28-15"><a href="#cb28-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">icon =</span> <span class="fu">awesomeIcons</span>(</span>
+<span id="cb28-16"><a href="#cb28-16" aria-hidden="true" tabindex="-1"></a>      <span class="at">icon        =</span> <span class="st">"briefcase"</span>,</span>
+<span id="cb28-17"><a href="#cb28-17" aria-hidden="true" tabindex="-1"></a>      <span class="at">iconColor   =</span> <span class="st">"white"</span>,</span>
+<span id="cb28-18"><a href="#cb28-18" aria-hidden="true" tabindex="-1"></a>      <span class="at">markerColor =</span> <span class="st">"blue"</span>,</span>
+<span id="cb28-19"><a href="#cb28-19" aria-hidden="true" tabindex="-1"></a>      <span class="at">library     =</span> <span class="st">"fa"</span></span>
+<span id="cb28-20"><a href="#cb28-20" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb28-21"><a href="#cb28-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">popup =</span> <span class="sc">~</span><span class="fu">paste0</span>(</span>
+<span id="cb28-22"><a href="#cb28-22" aria-hidden="true" tabindex="-1"></a>      <span class="st">"&lt;strong&gt;"</span>, State_Name, <span class="st">"&lt;/strong&gt;&lt;br&gt;"</span>,</span>
+<span id="cb28-23"><a href="#cb28-23" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Median salary: "</span>, <span class="fu">dollar</span>(Median), <span class="st">"&lt;br&gt;"</span>,</span>
+<span id="cb28-24"><a href="#cb28-24" aria-hidden="true" tabindex="-1"></a>      <span class="st">"P10: "</span>, <span class="fu">dollar</span>(P10), <span class="st">"&lt;br&gt;"</span>,</span>
+<span id="cb28-25"><a href="#cb28-25" aria-hidden="true" tabindex="-1"></a>      <span class="st">"P90: "</span>, <span class="fu">dollar</span>(P90)</span>
+<span id="cb28-26"><a href="#cb28-26" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb28-27"><a href="#cb28-27" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div class="leaflet html-widget html-fill-item" id="htmlwidget-72660947c7783bb40a3b" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-72660947c7783bb40a3b">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addProviderTiles","args":["CartoDB.Positron",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false}]},{"method":"addAwesomeMarkers","args":[[36.5341,47.4231,43.1361,42.3645,39.2778,43.9078,38.6777,37.563,43.3934,39.9637,35.4195,41.5928,44.2508,31.3897,39.1063,32.3329,34.2192,41.5928,40.0495,39.1063,27.8744,46.3943,40.9069,34.4764,31.75,49.25,35.6767,41.3356,38.3347,45.6226,32.5901,43.0504,41.9358,33.619,43.5648,43.1361,40.221,35.5053,38.4204,37.3915,40.0495,38.4204,44.5937,30.6181,46.823,47.2517,34.7336,44.3365,32.6758],[-119.773,-119.746,-75.14490000000001,-71.58,-76.6459,-120.068,-74.9841,-78.20050000000001,-71.39239999999999,-74.2336,-78.4686,-72.3573,-72.545,-98.78570000000001,-116.851,-83.3736,-111.625,-71.12439999999999,-89.3776,-111.33,-81.685,-94.60429999999999,-77.45,-105.942,-126.25,-127.25,-86.456,-99.5898,-92.5137,-68.98009999999999,-86.7509,-107.256,-93.37139999999999,-80.5056,-113.93,-84.687,-82.5963,-97.12390000000001,-98.1156,-84.76739999999999,-86.0808,-80.6665,-89.9941,-92.2724,-109.32,-100.099,-92.2992,-99.7238,-89.8065],{"icon":"briefcase","markerColor":"blue","iconColor":"white","spin":false,"squareMarker":false,"iconRotate":0,"font":"monospace","prefix":"fa"},null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},["<strong>California<\/strong><br>Median salary: $170,910<br>P10: $103,950<br>P90: $239,200","<strong>Washington<\/strong><br>Median salary: $166,910<br>P10: $102,630<br>P90: $239,200","<strong>New York<\/strong><br>Median salary: $161,260<br>P10: $85,520<br>P90: $223,480","<strong>Massachusetts<\/strong><br>Median salary: $150,520<br>P10: $99,360<br>P90: $208,220","<strong>Maryland<\/strong><br>Median salary: $137,890<br>P10: $86,490<br>P90: $218,190","<strong>Oregon<\/strong><br>Median salary: $135,260<br>P10: $92,120<br>P90: $211,750","<strong>Delaware<\/strong><br>Median salary: $135,160<br>P10: $93,850<br>P90: $169,070","<strong>Virginia<\/strong><br>Median salary: $134,470<br>P10: $82,560<br>P90: $208,480","<strong>New Hampshire<\/strong><br>Median salary: $132,420<br>P10: $85,590<br>P90: $199,160","<strong>New Jersey<\/strong><br>Median salary: $132,400<br>P10: $84,220<br>P90: $205,420","<strong>North Carolina<\/strong><br>Median salary: $131,000<br>P10: $79,620<br>P90: $173,660","<strong>Connecticut<\/strong><br>Median salary: $130,870<br>P10: $80,460<br>P90: $203,160","<strong>Vermont<\/strong><br>Median salary: $130,720<br>P10: $79,880<br>P90: $203,530","<strong>Texas<\/strong><br>Median salary: $130,500<br>P10: $79,490<br>P90: $174,710","<strong>Nevada<\/strong><br>Median salary: $129,030<br>P10: $76,000<br>P90: $203,840","<strong>Georgia<\/strong><br>Median salary: $128,920<br>P10: $75,950<br>P90: $173,650","<strong>Arizona<\/strong><br>Median salary: $128,690<br>P10: $80,300<br>P90: $186,280","<strong>Rhode Island<\/strong><br>Median salary: $128,660<br>P10: $82,630<br>P90: $168,020","<strong>Illinois<\/strong><br>Median salary: $127,770<br>P10: $75,450<br>P90: $172,020","<strong>Utah<\/strong><br>Median salary: $127,390<br>P10: $74,030<br>P90: $176,990","<strong>Florida<\/strong><br>Median salary: $126,550<br>P10: $75,260<br>P90: $174,030","<strong>Minnesota<\/strong><br>Median salary: $124,540<br>P10: $75,340<br>P90: $166,910","<strong>Pennsylvania<\/strong><br>Median salary: $123,740<br>P10: $73,730<br>P90: $167,290","<strong>New Mexico<\/strong><br>Median salary: $120,820<br>P10: $61,070<br>P90: $179,270","<strong>Hawaii<\/strong><br>Median salary: $119,880<br>P10: $53,840<br>P90: $194,220","<strong>Alaska<\/strong><br>Median salary: $119,600<br>P10: $92,980<br>P90: $196,500","<strong>Tennessee<\/strong><br>Median salary: $117,340<br>P10: $72,140<br>P90: $164,420","<strong>Nebraska<\/strong><br>Median salary: $116,420<br>P10: $77,300<br>P90: $146,310","<strong>Missouri<\/strong><br>Median salary: $114,550<br>P10: $63,210<br>P90: $163,270","<strong>Maine<\/strong><br>Median salary: $113,800<br>P10: $76,860<br>P90: $170,700","<strong>Alabama<\/strong><br>Median salary: $113,020<br>P10: $63,670<br>P90: $176,060","<strong>Wyoming<\/strong><br>Median salary: $112,590<br>P10: $61,810<br>P90: $163,840","<strong>Iowa<\/strong><br>Median salary: $109,850<br>P10: $70,650<br>P90: $169,200","<strong>South Carolina<\/strong><br>Median salary: $108,690<br>P10: $63,500<br>P90: $179,670","<strong>Idaho<\/strong><br>Median salary: $107,900<br>P10: $62,750<br>P90: $168,060","<strong>Michigan<\/strong><br>Median salary: $107,820<br>P10: $74,200<br>P90: $161,850","<strong>Ohio<\/strong><br>Median salary: $107,690<br>P10: $74,780<br>P90: $165,640","<strong>Oklahoma<\/strong><br>Median salary: $107,420<br>P10: $63,510<br>P90: $167,040","<strong>Kansas<\/strong><br>Median salary: $106,660<br>P10: $66,870<br>P90: $163,670","<strong>Kentucky<\/strong><br>Median salary: $106,200<br>P10: $71,330<br>P90: $164,770","<strong>Indiana<\/strong><br>Median salary: $103,570<br>P10: $68,680<br>P90: $151,450","<strong>West Virginia<\/strong><br>Median salary: $103,550<br>P10: $61,480<br>P90: $160,660","<strong>Wisconsin<\/strong><br>Median salary: $103,360<br>P10: $63,120<br>P90: $162,220","<strong>Louisiana<\/strong><br>Median salary: $102,290<br>P10: $64,480<br>P90: $154,220","<strong>Montana<\/strong><br>Median salary: $100,190<br>P10: $62,890<br>P90: $216,250","<strong>North Dakota<\/strong><br>Median salary: $98,550<br>P10: $63,140<br>P90: $153,280","<strong>Arkansas<\/strong><br>Median salary: $96,820<br>P10: $55,030<br>P90: $160,700","<strong>South Dakota<\/strong><br>Median salary: $87,770<br>P10: $59,510<br>P90: $130,610","<strong>Mississippi<\/strong><br>Median salary: $86,460<br>P10: $29,760<br>P90: $136,390"],null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[27.8744,49.25],"lng":[-127.25,-68.98009999999999]}},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+</section>
+<section id="q3-narrative-and-conclusion" class="level3">
+<h3 class="anchored" data-anchor-id="q3-narrative-and-conclusion">Q3 narrative and conclusion</h3>
+<p>The US map highlights clear regional patterns in median salaries. Some coastal and technology heavy states have higher median pay, while several interior states have lower values. However, high pay is not limited to one small region. Many states across the country show strong median salaries, which means there are diverse geographic options for a good software engineer income.</p>
+<p>The Leaflet map adds more detail by showing the tenth and ninetieth percentile salaries in each state. In most places the P10 and P90 values are within a reasonable distance of the median, which means the spread of income inside each state is significant but not wildly extreme. This contrasts with esports prize earnings, where the top players can be many times above the typical competitor. In software engineering the range is more balanced, which suggests a more stable career path.</p>
+<hr>
+</section>
+</section>
+<section id="overall-conclusion-for-the-software-engineer-salary-section" class="level2">
+<h2 class="anchored" data-anchor-id="overall-conclusion-for-the-software-engineer-salary-section">Overall conclusion for the software engineer salary section</h2>
+<p>Across my three questions, the software engineer salary data shows a consistent story. Median salaries vary across states, but many locations offer strong pay. The highest paying states do not capture an overwhelming share of the total median salary mass, and geographic patterns show several regions with solid opportunities. Within states, lower and upper percentiles are not vastly different from the median compared to the extreme concentration seen in esports prize money.</p>
+<p>For a student thinking about long term income, this suggests that software engineering provides a relatively stable and broadly accessible path to high earnings. When our group compares these results to the esports side of the project, the contrast in concentration and stability will help highlight how different the financial realities are between these two career choices.</p>
+</section>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

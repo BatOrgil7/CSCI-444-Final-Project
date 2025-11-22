@@ -1,0 +1,684 @@
+---
+title: "Group 9 – Esports vs Software Engineers"
+author:
+  - "Duy Nguyen – Esports Section"
+  - "Bat-Orgil Erdenebat – Software Engineer Salary Section"
+  - "Daniel Jimenez – Software Engineer Career / Experience Section"
+date: "2025-11-21"
+format:
+  html:
+    code-fold: true
+    toc: true
+  pdf:
+    toc: true
+execute:
+  warning: false
+  message: false
+---
+
+# Overall Introduction
+
+Our project investigates how **esports professionals** compare to **software engineers** in terms of income, age, and career patterns. Esports is often seen as a short, intense career with high earnings for only a small number of players, while software engineering is usually described as a long-term, stable profession.
+
+Each member of **Group 9** is responsible for one part of this story:
+
+- **Duy Nguyen** – *Esports section*: age and experience of esports players, game-level earnings, and which games dominate the top-earning professionals.
+- **Bat-Orgil Erdenebat** – *Software engineer salary section* (US/state-level maps, world map).
+- **Daniel Jimenez** – *Software engineer career / experience section* (state map, Leaflet or additional widgets).
+
+Together, these sections form a complete comparison between esports and software engineering careers.
+
+```{r}
+#| label: setup
+#global setup: load packages used across all questions
+
+pacman::p_load(tidyverse, kableExtra, plotly)
+
+theme_set(theme_minimal())
+```
+
+```{r}
+#| label: load-data
+#| echo: true
+
+players<- readr::read_csv("data/esports_players_top1000_clean.csv")
+team_perf <- readr::read_csv("data/esports_team_performance_clean.csv")
+games <- readr::read_csv("data/general_esport_games_clean.csv")
+
+glimpse(players)
+glimpse(team_perf)
+glimpse(games)
+```
+
+---
+
+# Duy's Esports Section (Group 9)
+
+**This section (coding + analysis) is written by: Duy Nguyen.**
+
+Instructor feedback for **Group 9** asked us to:
+
+- Compare **ages** of esports professionals and discuss how long it takes to “make it”.
+- Look at different **esports games**, because some games might produce much higher earnings than others.
+- Examine how long those games have been around and whether long-running titles have an advantage.
+
+For my part of the project I use:
+
+- **Dataset 1 (SCRAPED):** `esports_players_top1000_clean.csv` – top 1000 players by total earnings, scraped from *EsportsEarnings*.
+- **Dataset 2 (Kaggle – age & experience):** `esports_team_performance_clean.csv` – team / player-level statistics including age, experience, and performance.
+- **Dataset 3 (Kaggle – game earnings):** `general_esport_games_clean.csv` – game-level earnings and release years.
+
+My section includes:
+
+- A **histogram** and **bar chart** (ggplot),
+- A **Plotly html widget** with a new feature (x-axis range slider),
+- A formatted **table using kableExtra**,
+- And at least one dataset wrangled with **four different dplyr verbs** (`group_by`, `summarise`, `mutate`, `filter`).
+
+---
+
+## Question 1 – What is the typical age and experience profile of esports professionals?
+
+**Question 1:**  
+*What does the age and experience distribution look like for esports players in our Kaggle performance dataset, and what does this imply about the “window” when players tend to compete?*
+
+We first summarise the age and experience of players, then visualise the age distribution and explore how age relates to performance.
+
+### 1.1 Summary statistics for age and experience
+
+```{r}
+#| label: q1-summary
+#| echo: true
+q1_summary <- team_perf %>%
+  summarise(
+    mean_age= mean(age_years, na.rm = TRUE),
+    median_age= median(age_years, na.rm = TRUE),
+    min_age = min(age_years, na.rm = TRUE),
+    max_age = max(age_years, na.rm = TRUE),
+    mean_experience = mean(experience_years, na.rm = TRUE),
+    median_experience = median(experience_years, na.rm = TRUE)
+  )
+
+q1_summary
+```
+
+**Narrative (summary stats):**
+
+These summary statistics show the **typical age** and **years of experience** for players in the dataset. In our sample, the average player is about **22.8 years old**, with a median age of roughly **22.2**. The youngest player is just over **18** and the oldest is around **27.7**, so almost everyone falls inside a fairly narrow 10‑year window. Experience is also concentrated: players have on average about **6 years** of competitive experience (mean ≈ 5.96, median ≈ 6.07). This suggests that esports professionals typically reach a high level quite quickly and do not spend decades in the scene.
+
+### 1.2 Histogram of player ages
+
+```{r}
+#| label: q1-age-hist
+#| echo: true
+#| fig-cap: "histogram of player ages in the Kaggle esports performance dataset"
+#question 1: visualize the distribution of player ages using a histogram
+
+ggplot(team_perf, aes(x = age_years)) +
+  geom_histogram(binwidth = 2, color = "white", fill = "#1f78b4") +
+  labs(
+    title = "Distribution of Esports Player Ages",
+    x = "Age (years)",
+    y = "Number of players"
+  )
+```
+
+**Narrative (histogram):**
+
+The histogram reinforces this picture. Most players are between roughly **18 and 27** years old, with the tallest bars around the early twenties. There are almost no players far beyond the mid‑twenties, and the right tail drops off quickly. This fits the idea that reaction‑heavy esports favour younger competitors and that the competitive window is relatively short.
+
+**Conclusion for Question 1 – age distribution:**
+
+Overall, the age distribution suggests that esports careers are concentrated in the early adult years, with only a small number of older players still competing at a high level.
+
+### 1.3 Plotly html widget – Age vs performance
+
+```{r}
+#| label: q1-plotly-age-performance
+#| echo: true
+#| fig-cap: "interactive Plotly scatter plot of age vs performance, with experience shown by color"
+#question 1 (html widget): relationship between age and performance score
+# this satisfies the html-widget requirement for MY section
+# NEW Plotly feature used: x-axis range slider (not used in homework)
+
+q1_plotly <- plot_ly(
+  data = team_perf,
+  x = ~age_years,
+  y = ~performance_score,
+  color = ~experience_years,
+  type = "scatter",
+  mode = "markers",
+  hoverinfo = "text",
+  text = ~paste(
+    "Age:", age_years,
+    "<br>Experience (years):", experience_years,
+    "<br>Win rate (%):", round(win_rate_pct, 1)
+  )
+) %>%
+  layout(
+    title = "Age vs Performance Score (colored by experience years)",
+    xaxis = list(
+      title = "Age (years)",
+      rangeslider = list(visible = TRUE)
+    ),
+    yaxis = list(title = "Performance score")
+  )
+
+q1_plotly
+```
+
+**Narrative (Plotly scatter):**
+
+The interactive scatter plot lets us zoom in on different age ranges using the range slider. Points are coloured by years of experience, so older and more experienced players are easy to spot. Performance scores mostly fall between **350 and 750** points, and the densest cluster of strong scores is again in the **early‑twenties** age range for players with around **5–7 years** of experience. There are only a few points at older ages and they do not clearly outperform the younger group, which supports the idea that the peak of an esports career comes relatively early.
+
+**Conclusion for Question 1 – age and performance:**
+
+Combining the histogram and the scatter plot, Question 1 indicates that the esports career arc is compressed: players accumulate a few years of experience, reach high performance in their early twenties, and then relatively few remain in the top tier as they get older.
+
+---
+
+## Question 2 – Do older esports titles generate more total prize money?
+
+**Question 2:**  
+*Among major esports games, is there a relationship between how long a game has been around and the total prize money it has generated?*
+
+We now turn to the **game-level Kaggle dataset**, which contains total earnings and release years for a variety of esports titles.
+
+### 2.1 Prepare data and summary for game age and earnings
+
+```{r}
+#| label: q2-game-summary
+#| echo: true
+#question 2: prepare game-level data with earnings in millions
+# and compute overall summaries
+
+games_q2 <- games %>%
+  mutate(
+    total_earnings_m = total_earnings_usd / 1e6 #convert to millions usd
+  )
+
+games_q2 %>%
+  summarise(
+    n_games= n(),
+    mean_game_age= mean(game_age_years, na.rm = TRUE),
+    mean_earnings_m = mean(total_earnings_m, na.rm = TRUE),
+    max_earnings_m= max(total_earnings_m, na.rm = TRUE)
+  )
+```
+
+**Narrative (summary for games):**
+
+The summary shows that there are **669** different esports titles in this dataset. On average, a game has been out for about **12.2 years**, with mean total prize money of roughly **2.83 million USD**. However, the maximum total prize pool is much larger—around **360 million USD** for the top title—so prize money is clearly very uneven. Looking at game age against total earnings helps us see whether older games systematically accumulate more money.
+
+### 2.2 Scatterplot – Game age vs total earnings
+
+```{r}
+#| label: q2-age-vs-earnings
+#| echo: true
+#| fig-cap: "relationship between game age and total earnings (in millions of usd)"
+#question 2: scatter plot of game age vs total earnings, with a smooth trend line
+
+ggplot(games_q2, aes(x = game_age_years, y = total_earnings_m)) +
+  geom_point(alpha = 0.7, color = "#1f78b4") +
+  geom_smooth(method = "loess", se = FALSE, color = "#e31a1c") +
+  labs(
+    title = "Do Older Games Earn More Prize Money?",
+    x = "Game age (years since release)",
+    y = "Total earnings (millions of USD)"
+  )
+```
+
+**Narrative (scatter):**
+
+Each point represents a game, positioned by how long it has been out and how much total prize money it has generated. Most titles are clustered below **20 million USD** in total earnings, even when they have been around for **10–15 years**. A small number of games stand out as clear outliers with cumulative prize pools well above **100 million USD**. The smooth trend line rises from very young games to middle‑aged titles and then flattens out, suggesting that time in the market helps, but only a minority of games manage to convert longevity into very large prize pools.
+
+### 2.3 kableExtra table – Top 10 games by total earnings
+
+```{r}
+#| label: q2-top-games-table
+#| echo: true
+#| results: "asis"
+# question 2: show the top 10 games by total prize money using kableExtra
+# this satisfies the 'styled table' requirement for MY section
+
+top10_games <- games_q2 %>%
+  arrange(desc(total_earnings_m)) %>%
+  slice_head(n = 10) %>%
+  select(
+    game,
+    release_year,
+    game_age_years,
+    total_earnings_m,
+    total_players,
+    total_tournaments
+  )
+
+top10_games %>%
+  mutate(
+    total_earnings_m = round(total_earnings_m, 2)
+  ) %>%
+  kbl(
+    col.names = c(
+      "Game", "Release year", "Game age (years)",
+      "Total earnings (M USD)", "Total players", "Total tournaments"
+    ),
+    caption = "Top 10 esports titles by total prize money"
+  ) %>%
+  kable_paper(full_width = FALSE) %>%
+  row_spec(1, bold = TRUE) %>%
+  kable_styling(position = "center")
+```
+
+**Narrative (table):**
+
+The table lists the ten games with the largest prize pools. **Dota 2** alone has distributed about **360 million USD** in prize money, far ahead of other titles. Games like **Fortnite**, **Counter‑Strike: Global Offensive**, and **League of Legends** also have very large cumulative earnings (around **100–190 million USD** each), followed by titles such as **Arena of Valor** and the **PUBG** variants. These games are all relatively mature, with roughly **8–16 years** on the market, which supports the idea that successful long‑running titles accumulate massive prize pools over time. At the same time, one or two newer titles can appear on the list, showing that a game with strong backing can catch up quickly.
+
+**Conclusion for Question 2 – game age vs earnings:**
+
+Overall, Question 2 suggests that **time in the market matters**: older games have had more opportunities to host tournaments and distribute prize money. However, success is not guaranteed; only certain titles translate longevity into sustained earnings.
+
+---
+
+## Question 3 – Which games dominate the top-earning players?
+
+**Question 3:**  
+*Among the top 1000 highest-earning players, which games appear most often and capture the largest share of total player earnings?*
+
+Here we use the **scraped EsportsEarnings dataset** and create a pipeline with at least **four dplyr verbs**.
+
+### 3.1 4-pipe wrangling: aggregate players by highest-paying game
+
+```{r}
+#| label: q3-game-aggregation
+#| echo: true
+#| fig-cap: "total earnings and player counts by highest-paying game among the top 1000 players"
+# question 3: Which games dominate the top-earning players?
+# pipeline with at least 4 dplyr verbs that count toward the piping requirement:
+#   - group_by(), summarise(), mutate(), filter()   (arrange() is extra)
+# dataset: esports_players_top1000_clean.csv (scraped)
+
+players_game_summary <- players %>%
+  group_by(highest_paying_game) %>% 
+  summarise(
+    n_players= n(),
+    total_earnings = sum(total_overall_usd, na.rm = TRUE),
+    .groups = "drop"
+  ) %>%                                             
+  mutate(
+    total_earnings_m = total_earnings / 1e6
+  ) %>%                                             
+  filter(n_players >= 5) %>%                       
+  arrange(desc(total_earnings_m))
+
+players_game_summary
+```
+
+**Narrative (aggregated view):**
+
+This table shows how many of the top 1000 players list each game as their highest‑paying title, and how much total prize money those players have generated. For example, **Dota 2** alone accounts for more than **320 million USD** in earnings among 200+ players, while **CS:GO**, **Fortnite**, and **Arena of Valor** form a strong second tier. The four‑step pipeline uses `group_by`, `summarise`, `mutate`, and `filter` to transform the scraped player data into a concise, game‑level view that highlights this concentration.
+
+### 3.2 Bar chart – Top games by total earnings (top 1000 players)
+
+```{r}
+#| label: q3-top-games-bar
+#| echo: true
+#| fig-cap: "top games by total earnings among the top 1000 players (scraped data)"
+# question 3: bar chart of the top 10 games by total earnings
+
+players_game_summary %>%
+  slice_head(n = 10) %>%
+  ggplot(aes(
+    x = reorder(highest_paying_game, total_earnings_m),
+    y = total_earnings_m
+  )) +
+  geom_col(fill = "#1f78b4") +
+  coord_flip() +
+  labs(
+    title = "Top Games by Total Earnings (Top 1000 Players)",
+    x = "Game",
+    y = "Total earnings (millions of USD)"
+  )
+```
+
+**Narrative (bar chart):**
+
+The bar chart makes the concentration visually obvious. **Dota 2** is far ahead of the other games in terms of total earnings among the top 1000 players, with its bar more than twice as long as most other titles. The next group of games—**Counter‑Strike: Global Offensive**, **Fortnite**, **Arena of Valor**, and **League of Legends**—form a second tier with substantial but noticeably smaller totals. Below that, earnings drop off quickly, so many games contribute only a small slice of the overall prize pool.
+
+### 3.3 kableExtra table – Top 15 individual players
+
+```{r}
+#| label: q3-top-players-table
+#| echo: true
+#| results: "asis"
+# question 3: formatted table of the top 15 individual players by total earnings
+
+top15_players <- players %>%
+  arrange(desc(total_overall_usd)) %>%
+  slice_head(n = 15) %>%
+  mutate(
+    total_overall_m = round(total_overall_usd / 1e6, 2),
+    total_game_m= round(total_game_usd / 1e6, 2)
+  ) %>%
+  select(
+    rank,
+    player_id,
+    player_name,
+    highest_paying_game,
+    total_overall_m,
+    total_game_m,
+    pct_of_total_num
+  )
+
+top15_players %>%
+  kbl(
+    col.names = c(
+      "Rank",
+      "Player ID",
+      "Player name",
+      "Highest paying game",
+      "Total earnings (M USD)",
+      "Game earnings (M USD)",
+      "Game % of total"
+    ),
+    caption = "Top 15 esports players by total career earnings (scraped from EsportsEarnings)"
+  ) %>%
+  kable_paper(full_width = FALSE) %>%
+  kable_styling(position = "center") %>%
+  column_spec(5:6, bold = TRUE)
+```
+
+**Narrative (top-players table):**
+
+The table lists individual players with the largest career earnings. All of the top 15 specialise in **Dota 2**, with total career earnings ranging from about **4.3 to 7.2 million USD**. For almost all of them, game‑specific earnings are essentially **100%** of their total income, meaning that one title defines their entire professional career. This reinforces the idea that earnings at the top of esports are not only concentrated in a few players but also in a few games. Switching games mid‑career could be risky if prize pools and competitive scenes differ greatly.
+
+**Conclusion for Question 3 – domination of a few games:**
+
+Question 3 shows that the **earnings landscape is highly concentrated**: a small set of games and a relatively small number of players capture a large fraction of total prize money. For an aspiring professional, this means that choosing which game to focus on is almost as important as individual skill.
+
+---
+
+# Overall Conclusion for Duy's Esports Section
+
+Across my three questions, the esports data paints a consistent picture:
+
+1. **Age and experience:**  
+   Players in our dataset are mostly in their late teens and early twenties, with just a few years of experience. Performance seems to peak within this narrow window, suggesting that esports careers tend to be intense but short.
+
+2. **Game age and prize money:**  
+   Long‑running titles usually have higher cumulative prize pools, but only some games convert longevity into sustained earnings. A few successful titles dominate the market, while many others remain relatively small.
+
+3. **Concentration among games and players:**  
+   Among the top 1000 earners, prize money is heavily concentrated in a short list of games and a small group of players. Almost all of the biggest earners rely on one primary game for the majority of their income.
+
+These results show that esports careers offer high potential rewards but also significant risk and a limited time window. In the full Group 9 report, my esports findings will be compared with the software‑engineer sections to understand how these patterns differ from more traditional technical careers in terms of income stability, career length, and long‑term opportunities.
+
+---
+title: "Final Project - Software Engineer Salary Section"
+author: "Bat-Orgil Erdenebat"
+format:
+  html:
+    code-fold: true
+    code-summary: "Show code"
+    toc: true
+    toc-depth: 2
+  pdf:
+    code-fold: true
+    code-summary: "Show code"
+execute:
+  echo: true
+  warning: false
+  message: false
+---
+
+# Software engineer salary section - Bat-Orgil Erdenebat
+
+In our group project we compare the financial realities of two careers: professional esports and software engineering. My part focuses on the software engineer side. I use salary data for software developers in the United States to understand how pay is distributed and how concentrated the top earnings are.
+
+My section is built around three related questions:
+
+1. **Q1. How do median software engineer salaries vary across states in the United States.**
+2. **Q2. How much of the total median salary mass is concentrated in the highest paying states.**
+3. **Q3. What geographic patterns appear in software engineer pay levels, and how do different percentiles compare across states.**
+
+These questions together help answer the group level question about how realistic and stable software engineer earnings are compared to the very concentrated prize money at the top of esports.
+
+## Data and setup for software engineer salaries
+
+In this project the salary data was scraped from O*NET and stored as `data/software_salaries_html_tables.csv`. In this section I read that data, clean the salary columns, and create a statewide summary that will be reused in all visualizations.
+
+```{r}
+# Q0: load libraries for software engineer salary analysis
+# Question context: This chunk supports Q1, Q2, and Q3 by loading required packages.
+
+library(tidyverse)
+library(kableExtra)
+library(scales)
+library(usmap)
+library(leaflet)
+library(maps)
+```
+
+```{r}
+# Q0: read and clean software engineer salary data for all states
+# Question context: Prepare a clean statewide salary table that is used in Q1, Q2, and Q3.
+
+salaries_raw <- read_csv(
+  "data/software_salaries_html_tables.csv",
+  show_col_types = FALSE
+)
+
+cleaned_salaries <- salaries_raw %>%
+  mutate(
+    P10    = parse_number(`Annual Low (10%)`),
+    P25    = parse_number(`Annual QL (25%)`),
+    Median = parse_number(`Annual Median (50%)`),
+    P75    = parse_number(`Annual QU (75%)`),
+    P90    = parse_number(`Annual High (90%)`),
+    Location      = str_trim(Location),
+    Location_Type = case_when(
+      Location == "United States" ~ "National",
+      Location == State_Name      ~ "Statewide",
+      str_detect(Location, regex("nonmetropolitan", ignore_case = TRUE)) ~ "Non-metropolitan",
+      TRUE                        ~ "Metropolitan"
+    )
+  ) %>%
+  select(
+    Location, Location_Type,
+    State, State_Name,
+    P10, P25, Median, P75, P90
+  )
+
+statewide_summary <- cleaned_salaries %>%
+  filter(Location_Type == "Statewide") %>%
+  mutate(
+    state = State  
+  ) %>%
+  select(
+    state,         
+    State,          
+    State_Name,
+    P10, P25, Median, P75, P90
+  ) %>%
+  arrange(desc(Median))
+
+head(statewide_summary)
+```
+
+This cleaning step converts salary percentiles to numeric values, classifies each record by location type, and produces a table with one row per state. The object `statewide_summary` is used in all three of my questions and in every visualization below.
+
+---
+
+## Question 1 - How do median salaries vary across states
+
+**Q1. How do median software engineer salaries vary across states in the United States.**
+
+In this question I focus on how median salary levels differ from state to state. I use a bar chart to show the full distribution of medians across all states.
+
+### Q1 visualization - Bar chart of median salary by state
+
+```{r}
+# Q1: bar chart of median software engineer salary by state
+# Question 1: How do median salaries vary across states.
+
+median_bar_plot <- statewide_summary %>%
+  ggplot(aes(x = reorder(State_Name, Median), y = Median)) +
+  geom_col() +
+  coord_flip() +
+  labs(
+    title    = "Median software engineer salary by state",
+    subtitle = "Statewide estimates from O*NET Online",
+    x        = "State",
+    y        = "Median salary (USD)"
+  ) +
+  scale_y_continuous(labels = dollar) +
+  theme_minimal()
+
+median_bar_plot
+```
+
+### Q1 narrative and conclusion
+
+The bar chart shows that some states clearly pay more than others, but most states are in the same general range rather than being extremely low or extremely high. The ranking starts with states such as California and Washington near the top and moves down to lower paying states, but there is a smooth gradient instead of one or two extreme outliers. This suggests that software engineer salaries in the United States are spread across many states with reasonably strong median pay, rather than being limited to only one or two locations.
+
+---
+
+## Question 2 - How concentrated is income among the highest paying states
+
+**Q2. How much of the total median salary mass is concentrated in the highest paying states.**
+
+In this question I study how much of the overall median salary is accounted for by the top states. I create a four pipe dplyr pipeline that ranks states by median salary and computes each state s share and cumulative share of the total.
+
+### Q2 wrangling - Four pipe concentration pipeline
+
+```{r}
+# Q2: compute rank and cumulative share of total median salary by state
+# Question 2: How much of the total median salary mass is concentrated in the top states.
+# This pipeline uses four different dplyr verbs: filter, arrange, mutate, and select.
+
+salary_concentration <- statewide_summary %>%
+  filter(!is.na(Median)) %>%
+  arrange(desc(Median)) %>%
+  mutate(
+    rank      = row_number(),
+    share     = Median / sum(Median),
+    cum_share = cumsum(share)
+  ) %>%
+  select(State, State_Name, Median, rank, share, cum_share)
+
+head(salary_concentration)
+```
+
+### Q2 visualization - kableExtra table of top states and their share
+
+```{r}
+# Q2: kableExtra table of top 10 states by median salary and income share
+# Question 2: Show how much of the total median salary is concentrated in the highest paying states.
+
+salary_concentration %>%
+  mutate(
+    `Median salary (USD)` = dollar(Median),
+    `Share of total`      = percent(share, accuracy = 0.1),
+    `Cumulative share`    = percent(cum_share, accuracy = 0.1)
+  ) %>%
+  select(
+    Rank = rank,
+    State,
+    State_Name,
+    `Median salary (USD)`,
+    `Share of total`,
+    `Cumulative share`
+  ) %>%
+  slice(1:10) %>%
+  kable(
+    format  = "html",
+    caption = "Top 10 states by median software engineer salary and share of total median pay",
+    align   = "c"
+  ) %>%
+  kable_styling(
+    full_width        = FALSE,
+    bootstrap_options = c("striped", "hover", "condensed")
+  ) %>%
+  row_spec(0, bold = TRUE)
+```
+
+### Q2 narrative and conclusion
+
+From this table we see that the highest paying states do not capture an extreme share of the total median salary mass. The cumulative share grows gradually: even after the top ten states, the cumulative share is still well below a majority of the total. This means that there is not a tiny group of states hoarding most of the earning power. For a student, this supports the idea that software engineering is a broadly accessible high paying career, rather than one where only a few locations provide serious income.
+
+---
+
+## Question 3 - What geographic patterns appear in pay levels and percentiles
+
+**Q3. What geographic patterns appear in software engineer pay levels, and how do different percentiles compare across states.**
+
+In this question I look at how salaries vary across the map and how the lower and upper percentiles compare to the median. I use both a static US map and an interactive Leaflet widget to explore the geographic patterns.
+
+### Q3 visualization 1 - US map of median salary by state
+
+```{r}
+# Q3: US map of median software engineer salary by state
+# Question 3: What geographic patterns appear in software engineer pay levels.
+
+us_salary_map <- plot_usmap(
+  data    = statewide_summary,
+  values  = "Median",
+  regions = "states"
+) +
+  scale_fill_continuous(
+    name  = "Median salary",
+    label = dollar_format()
+  ) +
+  labs(
+    title    = "Median software engineer salary by state",
+    subtitle = "Statewide salary estimates from O*NET Online"
+  ) +
+  theme(legend.position = "right")
+
+us_salary_map
+```
+
+### Q3 visualization 2 - Leaflet map with custom markers
+
+```{r}
+# Q3: Leaflet map of software engineer salaries with custom markers
+# Question 3: How do different salary percentiles compare across states in a geographic view.
+
+state_centers <- as.data.frame(state.center) %>%
+  mutate(State_Name = state.name)
+
+leaflet_data <- statewide_summary %>%
+  left_join(state_centers, by = "State_Name")
+
+leaflet(leaflet_data) %>%
+  addProviderTiles(providers$CartoDB.Positron) %>%
+  addAwesomeMarkers(
+    lng  = ~x,
+    lat  = ~y,
+    icon = awesomeIcons(
+      icon        = "briefcase",
+      iconColor   = "white",
+      markerColor = "blue",
+      library     = "fa"
+    ),
+    popup = ~paste0(
+      "<strong>", State_Name, "</strong><br>",
+      "Median salary: ", dollar(Median), "<br>",
+      "P10: ", dollar(P10), "<br>",
+      "P90: ", dollar(P90)
+    )
+  )
+```
+
+### Q3 narrative and conclusion
+
+The US map highlights clear regional patterns in median salaries. Some coastal and technology heavy states have higher median pay, while several interior states have lower values. However, high pay is not limited to one small region. Many states across the country show strong median salaries, which means there are diverse geographic options for a good software engineer income.
+
+The Leaflet map adds more detail by showing the tenth and ninetieth percentile salaries in each state. In most places the P10 and P90 values are within a reasonable distance of the median, which means the spread of income inside each state is significant but not wildly extreme. This contrasts with esports prize earnings, where the top players can be many times above the typical competitor. In software engineering the range is more balanced, suggesting a more stable career path.
+
+---
+
+## Overall conclusion for the software engineer salary section
+
+Across my three questions, the software engineer salary data shows a consistent story. Median salaries vary across states, but many locations offer strong pay. The highest paying states do not capture an overwhelming share of the total median salary mass, and geographic patterns show several regions with solid opportunities. Within states, lower and upper percentiles are not vastly different from the median compared to the extreme concentration seen in esports prize money.
+
+For a student thinking about long term income, this suggests that software engineering provides a relatively stable and broadly accessible path to high earnings. When our group compares these results to the esports side of the project, the contrast in concentration and stability will help highlight how different the financial realities are between these two career choices.

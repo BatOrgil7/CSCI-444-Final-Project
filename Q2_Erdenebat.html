@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.42">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Bat-Orgil Erdenebat">
+
+<title>Final Project - Software Engineer Salary Section</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="Q2_Erdenebat_files/libs/clipboard/clipboard.min.js"></script>
+<script src="Q2_Erdenebat_files/libs/quarto-html/quarto.js"></script>
+<script src="Q2_Erdenebat_files/libs/quarto-html/popper.min.js"></script>
+<script src="Q2_Erdenebat_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="Q2_Erdenebat_files/libs/quarto-html/anchor.min.js"></script>
+<link href="Q2_Erdenebat_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="Q2_Erdenebat_files/libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="Q2_Erdenebat_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="Q2_Erdenebat_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="Q2_Erdenebat_files/libs/bootstrap/bootstrap-1bc8a17f135ab3d594c857e9f48e611b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="Q2_Erdenebat_files/libs/kePrint-0.0.1/kePrint.js"></script>
+
+<link href="Q2_Erdenebat_files/libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+
+<link href="Q2_Erdenebat_files/libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
+
+<script src="Q2_Erdenebat_files/libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+
+<script src="Q2_Erdenebat_files/libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+
+<link href="Q2_Erdenebat_files/libs/leaflet-1.3.1/leaflet.css" rel="stylesheet">
+
+<script src="Q2_Erdenebat_files/libs/leaflet-1.3.1/leaflet.js"></script>
+
+<link href="Q2_Erdenebat_files/libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet">
+
+<script src="Q2_Erdenebat_files/libs/proj4-2.6.2/proj4.min.js"></script>
+
+<script src="Q2_Erdenebat_files/libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+
+<link href="Q2_Erdenebat_files/libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet">
+
+<script src="Q2_Erdenebat_files/libs/leaflet-binding-2.2.3/leaflet.js"></script>
+
+<script src="Q2_Erdenebat_files/libs/leaflet-providers-2.0.0/leaflet-providers_2.0.0.js"></script>
+
+<script src="Q2_Erdenebat_files/libs/leaflet-providers-plugin-2.2.3/leaflet-providers-plugin.js"></script>
+
+<link href="Q2_Erdenebat_files/libs/leaflet-awesomemarkers-2.0.3/leaflet.awesome-markers.css" rel="stylesheet">
+
+<script src="Q2_Erdenebat_files/libs/leaflet-awesomemarkers-2.0.3/leaflet.awesome-markers.min.js"></script>
+
+<link href="Q2_Erdenebat_files/libs/fontawesome-4.7.0/font-awesome.min.css" rel="stylesheet">
+
+
+
+</head>
+
+<body>
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul class="collapse">
+  <li><a href="#software-engineer-salary-section---bat-orgil-erdenebat" id="toc-software-engineer-salary-section---bat-orgil-erdenebat" class="nav-link active" data-scroll-target="#software-engineer-salary-section---bat-orgil-erdenebat">Software engineer salary section - Bat-Orgil Erdenebat</a>
+  <ul class="collapse">
+  <li><a href="#data-and-setup-for-software-engineer-salaries" id="toc-data-and-setup-for-software-engineer-salaries" class="nav-link" data-scroll-target="#data-and-setup-for-software-engineer-salaries">Data and setup for software engineer salaries</a></li>
+  <li><a href="#question-1---how-do-median-salaries-vary-across-states" id="toc-question-1---how-do-median-salaries-vary-across-states" class="nav-link" data-scroll-target="#question-1---how-do-median-salaries-vary-across-states">Question 1 - How do median salaries vary across states</a></li>
+  <li><a href="#question-2---how-concentrated-is-income-among-the-highest-paying-states" id="toc-question-2---how-concentrated-is-income-among-the-highest-paying-states" class="nav-link" data-scroll-target="#question-2---how-concentrated-is-income-among-the-highest-paying-states">Question 2 - How concentrated is income among the highest paying states</a></li>
+  <li><a href="#question-3---what-geographic-patterns-appear-in-pay-levels-and-percentiles" id="toc-question-3---what-geographic-patterns-appear-in-pay-levels-and-percentiles" class="nav-link" data-scroll-target="#question-3---what-geographic-patterns-appear-in-pay-levels-and-percentiles">Question 3 - What geographic patterns appear in pay levels and percentiles</a></li>
+  <li><a href="#overall-conclusion-for-the-software-engineer-salary-section" id="toc-overall-conclusion-for-the-software-engineer-salary-section" class="nav-link" data-scroll-target="#overall-conclusion-for-the-software-engineer-salary-section">Overall conclusion for the software engineer salary section</a></li>
+  </ul></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="Q2_Erdenebat.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
+</div>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Final Project - Software Engineer Salary Section</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Bat-Orgil Erdenebat </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="software-engineer-salary-section---bat-orgil-erdenebat" class="level1">
+<h1>Software engineer salary section - Bat-Orgil Erdenebat</h1>
+<p>In our group project we compare the financial realities of two careers: professional esports and software engineering. My part focuses on the software engineer side. I use salary data for software developers in the United States to understand how pay is distributed and how concentrated the top earnings are.</p>
+<p>My section is built around three related questions:</p>
+<ol type="1">
+<li><strong>Q1. How do median software engineer salaries vary across states in the United States.</strong></li>
+<li><strong>Q2. How much of the total median salary mass is concentrated in the highest paying states.</strong></li>
+<li><strong>Q3. What geographic patterns appear in software engineer pay levels, and how do different percentiles compare across states.</strong></li>
+</ol>
+<p>These questions together help answer the group level question about how realistic and stable software engineer earnings are compared to the very concentrated prize money at the top of esports.</p>
+<section id="data-and-setup-for-software-engineer-salaries" class="level2">
+<h2 class="anchored" data-anchor-id="data-and-setup-for-software-engineer-salaries">Data and setup for software engineer salaries</h2>
+<p>In this project the salary data was scraped from O*NET and stored as <code>data/software_salaries_html_tables.csv</code>. In this section I read that data, clean the salary columns, and create a statewide summary that will be reused in all visualizations.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Q0: load libraries for software engineer salary analysis</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Question context: This chunk supports Q1, Q2, and Q3 by loading required packages.</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(kableExtra)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(scales)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(usmap)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(leaflet)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(maps)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Q0: read and clean software engineer salary data for all states</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Question context: Prepare a clean statewide salary table that is used in Q1, Q2, and Q3.</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>salaries_raw <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="st">"data/software_salaries_html_tables.csv"</span>,</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">show_col_types =</span> <span class="cn">FALSE</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>cleaned_salaries <span class="ot">&lt;-</span> salaries_raw <span class="sc">%&gt;%</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">P10    =</span> <span class="fu">parse_number</span>(<span class="st">`</span><span class="at">Annual Low (10%)</span><span class="st">`</span>),</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">P25    =</span> <span class="fu">parse_number</span>(<span class="st">`</span><span class="at">Annual QL (25%)</span><span class="st">`</span>),</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">Median =</span> <span class="fu">parse_number</span>(<span class="st">`</span><span class="at">Annual Median (50%)</span><span class="st">`</span>),</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">P75    =</span> <span class="fu">parse_number</span>(<span class="st">`</span><span class="at">Annual QU (75%)</span><span class="st">`</span>),</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">P90    =</span> <span class="fu">parse_number</span>(<span class="st">`</span><span class="at">Annual High (90%)</span><span class="st">`</span>),</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">Location      =</span> <span class="fu">str_trim</span>(Location),</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">Location_Type =</span> <span class="fu">case_when</span>(</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>      Location <span class="sc">==</span> <span class="st">"United States"</span> <span class="sc">~</span> <span class="st">"National"</span>,</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>      Location <span class="sc">==</span> State_Name      <span class="sc">~</span> <span class="st">"Statewide"</span>,</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>      <span class="fu">str_detect</span>(Location, <span class="fu">regex</span>(<span class="st">"nonmetropolitan"</span>, <span class="at">ignore_case =</span> <span class="cn">TRUE</span>)) <span class="sc">~</span> <span class="st">"Non-metropolitan"</span>,</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>      <span class="cn">TRUE</span>                        <span class="sc">~</span> <span class="st">"Metropolitan"</span></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>    Location, Location_Type,</span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>    State, State_Name,</span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>    P10, P25, Median, P75, P90</span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>statewide_summary <span class="ot">&lt;-</span> cleaned_salaries <span class="sc">%&gt;%</span></span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Location_Type <span class="sc">==</span> <span class="st">"Statewide"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>    <span class="at">state =</span> State  </span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(</span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>    state,         </span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>    State,          </span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>    State_Name,</span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a>    P10, P25, Median, P75, P90</span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(Median))</span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(statewide_summary)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 8
+  state State State_Name       P10    P25 Median    P75    P90
+  &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;          &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;
+1 CA    CA    California    103950 134820 170910 212280 239200
+2 WA    WA    Washington    102630 132870 166910 207370 239200
+3 NY    NY    New York       85520 119530 161260 194790 223480
+4 MA    MA    Massachusetts  99360 125430 150520 172680 208220
+5 MD    MD    Maryland       86490 107670 137890 175900 218190
+6 OR    OR    Oregon         92120 110080 135260 165940 211750</code></pre>
+</div>
+</div>
+<p>This cleaning step converts salary percentiles to numeric values, classifies each record by location type, and produces a table with one row per state. The object <code>statewide_summary</code> is used in all three of my questions and in every visualization below.</p>
+<hr>
+</section>
+<section id="question-1---how-do-median-salaries-vary-across-states" class="level2">
+<h2 class="anchored" data-anchor-id="question-1---how-do-median-salaries-vary-across-states">Question 1 - How do median salaries vary across states</h2>
+<p><strong>Q1. How do median software engineer salaries vary across states in the United States.</strong></p>
+<p>In this question I focus on how median salary levels differ from state to state. I use a bar chart to show the full distribution of medians across all states.</p>
+<section id="q1-visualization---bar-chart-of-median-salary-by-state" class="level3">
+<h3 class="anchored" data-anchor-id="q1-visualization---bar-chart-of-median-salary-by-state">Q1 visualization - Bar chart of median salary by state</h3>
+<div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Q1: bar chart of median software engineer salary by state</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Question 1: How do median salaries vary across states.</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>median_bar_plot <span class="ot">&lt;-</span> statewide_summary <span class="sc">%&gt;%</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">reorder</span>(State_Name, Median), <span class="at">y =</span> Median)) <span class="sc">+</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">title    =</span> <span class="st">"Median software engineer salary by state"</span>,</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Statewide estimates from O*NET Online"</span>,</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">x        =</span> <span class="st">"State"</span>,</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">y        =</span> <span class="st">"Median salary (USD)"</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> dollar) <span class="sc">+</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>median_bar_plot</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Q2_Erdenebat_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="q1-narrative-and-conclusion" class="level3">
+<h3 class="anchored" data-anchor-id="q1-narrative-and-conclusion">Q1 narrative and conclusion</h3>
+<p>The bar chart shows that some states clearly pay more than others, but most states are in the same general range rather than being extremely low or extremely high. The ranking starts with states such as California and Washington near the top and moves down to lower paying states, but there is a smooth gradient instead of one or two extreme outliers. This suggests that software engineer salaries in the United States are spread across many states with reasonably strong median pay, rather than being limited to only one or two locations.</p>
+<hr>
+</section>
+</section>
+<section id="question-2---how-concentrated-is-income-among-the-highest-paying-states" class="level2">
+<h2 class="anchored" data-anchor-id="question-2---how-concentrated-is-income-among-the-highest-paying-states">Question 2 - How concentrated is income among the highest paying states</h2>
+<p><strong>Q2. How much of the total median salary mass is concentrated in the highest paying states.</strong></p>
+<p>In this question I study how much of the overall median salary is accounted for by the top states. I create a four pipe dplyr pipeline that ranks states by median salary and computes each state s share and cumulative share of the total.</p>
+<section id="q2-wrangling---four-pipe-concentration-pipeline" class="level3">
+<h3 class="anchored" data-anchor-id="q2-wrangling---four-pipe-concentration-pipeline">Q2 wrangling - Four pipe concentration pipeline</h3>
+<div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Q2: compute rank and cumulative share of total median salary by state</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Question 2: How much of the total median salary mass is concentrated in the top states.</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># This pipeline uses four different dplyr verbs: filter, arrange, mutate, and select.</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>salary_concentration <span class="ot">&lt;-</span> statewide_summary <span class="sc">%&gt;%</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(Median)) <span class="sc">%&gt;%</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(Median)) <span class="sc">%&gt;%</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">rank      =</span> <span class="fu">row_number</span>(),</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">share     =</span> Median <span class="sc">/</span> <span class="fu">sum</span>(Median),</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">cum_share =</span> <span class="fu">cumsum</span>(share)</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(State, State_Name, Median, rank, share, cum_share)</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(salary_concentration)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 6
+  State State_Name    Median  rank  share cum_share
+  &lt;chr&gt; &lt;chr&gt;          &lt;dbl&gt; &lt;int&gt;  &lt;dbl&gt;     &lt;dbl&gt;
+1 CA    California    170910     1 0.0289    0.0289
+2 WA    Washington    166910     2 0.0282    0.0571
+3 NY    New York      161260     3 0.0272    0.0843
+4 MA    Massachusetts 150520     4 0.0254    0.110 
+5 MD    Maryland      137890     5 0.0233    0.133 
+6 OR    Oregon        135260     6 0.0229    0.156 </code></pre>
+</div>
+</div>
+</section>
+<section id="q2-visualization---kableextra-table-of-top-states-and-their-share" class="level3">
+<h3 class="anchored" data-anchor-id="q2-visualization---kableextra-table-of-top-states-and-their-share">Q2 visualization - kableExtra table of top states and their share</h3>
+<div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Q2: kableExtra table of top 10 states by median salary and income share</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Question 2: Show how much of the total median salary is concentrated in the highest paying states.</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>salary_concentration <span class="sc">%&gt;%</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Median salary (USD)</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">dollar</span>(Median),</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Share of total</span><span class="st">`</span>      <span class="ot">=</span> <span class="fu">percent</span>(share, <span class="at">accuracy =</span> <span class="fl">0.1</span>),</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Cumulative share</span><span class="st">`</span>    <span class="ot">=</span> <span class="fu">percent</span>(cum_share, <span class="at">accuracy =</span> <span class="fl">0.1</span>)</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">Rank =</span> rank,</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>    State,</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>    State_Name,</span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Median salary (USD)</span><span class="st">`</span>,</span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Share of total</span><span class="st">`</span>,</span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Cumulative share</span><span class="st">`</span></span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(</span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">format  =</span> <span class="st">"html"</span>,</span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">caption =</span> <span class="st">"Top 10 states by median software engineer salary and share of total median pay"</span>,</span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">align   =</span> <span class="st">"c"</span></span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_styling</span>(</span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">full_width        =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">bootstrap_options =</span> <span class="fu">c</span>(<span class="st">"striped"</span>, <span class="st">"hover"</span>, <span class="st">"condensed"</span>)</span>
+<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">row_spec</span>(<span class="dv">0</span>, <span class="at">bold =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<table class="table table-striped table-hover table-condensed caption-top table-sm small" data-quarto-postprocess="true">
+<caption>Top 10 states by median software engineer salary and share of total median pay</caption>
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: bold;">Rank</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: bold;">State</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: bold;">State_Name</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: bold;">Median salary (USD)</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: bold;">Share of total</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: bold;">Cumulative share</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">CA</td>
+<td style="text-align: center;">California</td>
+<td style="text-align: center;">$170,910</td>
+<td style="text-align: center;">2.9%</td>
+<td style="text-align: center;">2.9%</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">WA</td>
+<td style="text-align: center;">Washington</td>
+<td style="text-align: center;">$166,910</td>
+<td style="text-align: center;">2.8%</td>
+<td style="text-align: center;">5.7%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">NY</td>
+<td style="text-align: center;">New York</td>
+<td style="text-align: center;">$161,260</td>
+<td style="text-align: center;">2.7%</td>
+<td style="text-align: center;">8.4%</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">MA</td>
+<td style="text-align: center;">Massachusetts</td>
+<td style="text-align: center;">$150,520</td>
+<td style="text-align: center;">2.5%</td>
+<td style="text-align: center;">11.0%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">MD</td>
+<td style="text-align: center;">Maryland</td>
+<td style="text-align: center;">$137,890</td>
+<td style="text-align: center;">2.3%</td>
+<td style="text-align: center;">13.3%</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">OR</td>
+<td style="text-align: center;">Oregon</td>
+<td style="text-align: center;">$135,260</td>
+<td style="text-align: center;">2.3%</td>
+<td style="text-align: center;">15.6%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">DE</td>
+<td style="text-align: center;">Delaware</td>
+<td style="text-align: center;">$135,160</td>
+<td style="text-align: center;">2.3%</td>
+<td style="text-align: center;">17.9%</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">8</td>
+<td style="text-align: center;">VA</td>
+<td style="text-align: center;">Virginia</td>
+<td style="text-align: center;">$134,470</td>
+<td style="text-align: center;">2.3%</td>
+<td style="text-align: center;">20.1%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">9</td>
+<td style="text-align: center;">NH</td>
+<td style="text-align: center;">New Hampshire</td>
+<td style="text-align: center;">$132,420</td>
+<td style="text-align: center;">2.2%</td>
+<td style="text-align: center;">22.4%</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">NJ</td>
+<td style="text-align: center;">New Jersey</td>
+<td style="text-align: center;">$132,400</td>
+<td style="text-align: center;">2.2%</td>
+<td style="text-align: center;">24.6%</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+</section>
+<section id="q2-narrative-and-conclusion" class="level3">
+<h3 class="anchored" data-anchor-id="q2-narrative-and-conclusion">Q2 narrative and conclusion</h3>
+<p>From this table we see that the highest paying states do not capture an extreme share of the total median salary mass. The cumulative share grows gradually: even after the top ten states, the cumulative share is still well below a majority of the total. This means that there is not a tiny group of states hoarding most of the earning power. For a student, this supports the idea that software engineering is a broadly accessible high paying career, rather than one where only a few locations provide serious income.</p>
+<hr>
+</section>
+</section>
+<section id="question-3---what-geographic-patterns-appear-in-pay-levels-and-percentiles" class="level2">
+<h2 class="anchored" data-anchor-id="question-3---what-geographic-patterns-appear-in-pay-levels-and-percentiles">Question 3 - What geographic patterns appear in pay levels and percentiles</h2>
+<p><strong>Q3. What geographic patterns appear in software engineer pay levels, and how do different percentiles compare across states.</strong></p>
+<p>In this question I look at how salaries vary across the map and how the lower and upper percentiles compare to the median. I use both a static US map and an interactive Leaflet widget to explore the geographic patterns.</p>
+<section id="q3-visualization-1---us-map-of-median-salary-by-state" class="level3">
+<h3 class="anchored" data-anchor-id="q3-visualization-1---us-map-of-median-salary-by-state">Q3 visualization 1 - US map of median salary by state</h3>
+<div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Q3: US map of median software engineer salary by state</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Question 3: What geographic patterns appear in software engineer pay levels.</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>us_salary_map <span class="ot">&lt;-</span> <span class="fu">plot_usmap</span>(</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">data    =</span> statewide_summary,</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">values  =</span> <span class="st">"Median"</span>,</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">regions =</span> <span class="st">"states"</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>) <span class="sc">+</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_continuous</span>(</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">name  =</span> <span class="st">"Median salary"</span>,</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">label =</span> <span class="fu">dollar_format</span>()</span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">title    =</span> <span class="st">"Median software engineer salary by state"</span>,</span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Statewide salary estimates from O*NET Online"</span></span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"right"</span>)</span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>us_salary_map</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Q2_Erdenebat_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="q3-visualization-2---leaflet-map-with-custom-markers" class="level3">
+<h3 class="anchored" data-anchor-id="q3-visualization-2---leaflet-map-with-custom-markers">Q3 visualization 2 - Leaflet map with custom markers</h3>
+<div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Q3: Leaflet map of software engineer salaries with custom markers</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Question 3: How do different salary percentiles compare across states in a geographic view.</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>state_centers <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(state.center) <span class="sc">%&gt;%</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">State_Name =</span> state.name)</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>leaflet_data <span class="ot">&lt;-</span> statewide_summary <span class="sc">%&gt;%</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(state_centers, <span class="at">by =</span> <span class="st">"State_Name"</span>)</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a><span class="fu">leaflet</span>(leaflet_data) <span class="sc">%&gt;%</span></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addProviderTiles</span>(providers<span class="sc">$</span>CartoDB.Positron) <span class="sc">%&gt;%</span></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addAwesomeMarkers</span>(</span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">lng  =</span> <span class="sc">~</span>x,</span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">lat  =</span> <span class="sc">~</span>y,</span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">icon =</span> <span class="fu">awesomeIcons</span>(</span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>      <span class="at">icon        =</span> <span class="st">"briefcase"</span>,</span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>      <span class="at">iconColor   =</span> <span class="st">"white"</span>,</span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>      <span class="at">markerColor =</span> <span class="st">"blue"</span>,</span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a>      <span class="at">library     =</span> <span class="st">"fa"</span></span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">popup =</span> <span class="sc">~</span><span class="fu">paste0</span>(</span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a>      <span class="st">"&lt;strong&gt;"</span>, State_Name, <span class="st">"&lt;/strong&gt;&lt;br&gt;"</span>,</span>
+<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Median salary: "</span>, <span class="fu">dollar</span>(Median), <span class="st">"&lt;br&gt;"</span>,</span>
+<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a>      <span class="st">"P10: "</span>, <span class="fu">dollar</span>(P10), <span class="st">"&lt;br&gt;"</span>,</span>
+<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a>      <span class="st">"P90: "</span>, <span class="fu">dollar</span>(P90)</span>
+<span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb9-27"><a href="#cb9-27" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div class="leaflet html-widget html-fill-item" id="htmlwidget-e81f78389f927cc01e3a" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-e81f78389f927cc01e3a">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addProviderTiles","args":["CartoDB.Positron",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false}]},{"method":"addAwesomeMarkers","args":[[36.5341,47.4231,43.1361,42.3645,39.2778,43.9078,38.6777,37.563,43.3934,39.9637,35.4195,41.5928,44.2508,31.3897,39.1063,32.3329,34.2192,41.5928,40.0495,39.1063,27.8744,46.3943,40.9069,34.4764,31.75,49.25,35.6767,41.3356,38.3347,45.6226,32.5901,43.0504,41.9358,33.619,43.5648,43.1361,40.221,35.5053,38.4204,37.3915,40.0495,38.4204,44.5937,30.6181,46.823,47.2517,34.7336,44.3365,32.6758],[-119.773,-119.746,-75.14490000000001,-71.58,-76.6459,-120.068,-74.9841,-78.20050000000001,-71.39239999999999,-74.2336,-78.4686,-72.3573,-72.545,-98.78570000000001,-116.851,-83.3736,-111.625,-71.12439999999999,-89.3776,-111.33,-81.685,-94.60429999999999,-77.45,-105.942,-126.25,-127.25,-86.456,-99.5898,-92.5137,-68.98009999999999,-86.7509,-107.256,-93.37139999999999,-80.5056,-113.93,-84.687,-82.5963,-97.12390000000001,-98.1156,-84.76739999999999,-86.0808,-80.6665,-89.9941,-92.2724,-109.32,-100.099,-92.2992,-99.7238,-89.8065],{"icon":"briefcase","markerColor":"blue","iconColor":"white","spin":false,"squareMarker":false,"iconRotate":0,"font":"monospace","prefix":"fa"},null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},["<strong>California<\/strong><br>Median salary: $170,910<br>P10: $103,950<br>P90: $239,200","<strong>Washington<\/strong><br>Median salary: $166,910<br>P10: $102,630<br>P90: $239,200","<strong>New York<\/strong><br>Median salary: $161,260<br>P10: $85,520<br>P90: $223,480","<strong>Massachusetts<\/strong><br>Median salary: $150,520<br>P10: $99,360<br>P90: $208,220","<strong>Maryland<\/strong><br>Median salary: $137,890<br>P10: $86,490<br>P90: $218,190","<strong>Oregon<\/strong><br>Median salary: $135,260<br>P10: $92,120<br>P90: $211,750","<strong>Delaware<\/strong><br>Median salary: $135,160<br>P10: $93,850<br>P90: $169,070","<strong>Virginia<\/strong><br>Median salary: $134,470<br>P10: $82,560<br>P90: $208,480","<strong>New Hampshire<\/strong><br>Median salary: $132,420<br>P10: $85,590<br>P90: $199,160","<strong>New Jersey<\/strong><br>Median salary: $132,400<br>P10: $84,220<br>P90: $205,420","<strong>North Carolina<\/strong><br>Median salary: $131,000<br>P10: $79,620<br>P90: $173,660","<strong>Connecticut<\/strong><br>Median salary: $130,870<br>P10: $80,460<br>P90: $203,160","<strong>Vermont<\/strong><br>Median salary: $130,720<br>P10: $79,880<br>P90: $203,530","<strong>Texas<\/strong><br>Median salary: $130,500<br>P10: $79,490<br>P90: $174,710","<strong>Nevada<\/strong><br>Median salary: $129,030<br>P10: $76,000<br>P90: $203,840","<strong>Georgia<\/strong><br>Median salary: $128,920<br>P10: $75,950<br>P90: $173,650","<strong>Arizona<\/strong><br>Median salary: $128,690<br>P10: $80,300<br>P90: $186,280","<strong>Rhode Island<\/strong><br>Median salary: $128,660<br>P10: $82,630<br>P90: $168,020","<strong>Illinois<\/strong><br>Median salary: $127,770<br>P10: $75,450<br>P90: $172,020","<strong>Utah<\/strong><br>Median salary: $127,390<br>P10: $74,030<br>P90: $176,990","<strong>Florida<\/strong><br>Median salary: $126,550<br>P10: $75,260<br>P90: $174,030","<strong>Minnesota<\/strong><br>Median salary: $124,540<br>P10: $75,340<br>P90: $166,910","<strong>Pennsylvania<\/strong><br>Median salary: $123,740<br>P10: $73,730<br>P90: $167,290","<strong>New Mexico<\/strong><br>Median salary: $120,820<br>P10: $61,070<br>P90: $179,270","<strong>Hawaii<\/strong><br>Median salary: $119,880<br>P10: $53,840<br>P90: $194,220","<strong>Alaska<\/strong><br>Median salary: $119,600<br>P10: $92,980<br>P90: $196,500","<strong>Tennessee<\/strong><br>Median salary: $117,340<br>P10: $72,140<br>P90: $164,420","<strong>Nebraska<\/strong><br>Median salary: $116,420<br>P10: $77,300<br>P90: $146,310","<strong>Missouri<\/strong><br>Median salary: $114,550<br>P10: $63,210<br>P90: $163,270","<strong>Maine<\/strong><br>Median salary: $113,800<br>P10: $76,860<br>P90: $170,700","<strong>Alabama<\/strong><br>Median salary: $113,020<br>P10: $63,670<br>P90: $176,060","<strong>Wyoming<\/strong><br>Median salary: $112,590<br>P10: $61,810<br>P90: $163,840","<strong>Iowa<\/strong><br>Median salary: $109,850<br>P10: $70,650<br>P90: $169,200","<strong>South Carolina<\/strong><br>Median salary: $108,690<br>P10: $63,500<br>P90: $179,670","<strong>Idaho<\/strong><br>Median salary: $107,900<br>P10: $62,750<br>P90: $168,060","<strong>Michigan<\/strong><br>Median salary: $107,820<br>P10: $74,200<br>P90: $161,850","<strong>Ohio<\/strong><br>Median salary: $107,690<br>P10: $74,780<br>P90: $165,640","<strong>Oklahoma<\/strong><br>Median salary: $107,420<br>P10: $63,510<br>P90: $167,040","<strong>Kansas<\/strong><br>Median salary: $106,660<br>P10: $66,870<br>P90: $163,670","<strong>Kentucky<\/strong><br>Median salary: $106,200<br>P10: $71,330<br>P90: $164,770","<strong>Indiana<\/strong><br>Median salary: $103,570<br>P10: $68,680<br>P90: $151,450","<strong>West Virginia<\/strong><br>Median salary: $103,550<br>P10: $61,480<br>P90: $160,660","<strong>Wisconsin<\/strong><br>Median salary: $103,360<br>P10: $63,120<br>P90: $162,220","<strong>Louisiana<\/strong><br>Median salary: $102,290<br>P10: $64,480<br>P90: $154,220","<strong>Montana<\/strong><br>Median salary: $100,190<br>P10: $62,890<br>P90: $216,250","<strong>North Dakota<\/strong><br>Median salary: $98,550<br>P10: $63,140<br>P90: $153,280","<strong>Arkansas<\/strong><br>Median salary: $96,820<br>P10: $55,030<br>P90: $160,700","<strong>South Dakota<\/strong><br>Median salary: $87,770<br>P10: $59,510<br>P90: $130,610","<strong>Mississippi<\/strong><br>Median salary: $86,460<br>P10: $29,760<br>P90: $136,390"],null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[27.8744,49.25],"lng":[-127.25,-68.98009999999999]}},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+</section>
+<section id="q3-narrative-and-conclusion" class="level3">
+<h3 class="anchored" data-anchor-id="q3-narrative-and-conclusion">Q3 narrative and conclusion</h3>
+<p>The US map highlights clear regional patterns in median salaries. Some coastal and technology heavy states have higher median pay, while several interior states have lower values. However, high pay is not limited to one small region. Many states across the country show strong median salaries, which means there are diverse geographic options for a good software engineer income.</p>
+<p>The Leaflet map adds more detail by showing the tenth and ninetieth percentile salaries in each state. In most places the P10 and P90 values are within a reasonable distance of the median, which means the spread of income inside each state is significant but not wildly extreme. This contrasts with esports prize earnings, where the top players can be many times above the typical competitor. In software engineering the range is more balanced, suggesting a more stable career path.</p>
+<hr>
+</section>
+</section>
+<section id="overall-conclusion-for-the-software-engineer-salary-section" class="level2">
+<h2 class="anchored" data-anchor-id="overall-conclusion-for-the-software-engineer-salary-section">Overall conclusion for the software engineer salary section</h2>
+<p>Across my three questions, the software engineer salary data shows a consistent story. Median salaries vary across states, but many locations offer strong pay. The highest paying states do not capture an overwhelming share of the total median salary mass, and geographic patterns show several regions with solid opportunities. Within states, lower and upper percentiles are not vastly different from the median compared to the extreme concentration seen in esports prize money.</p>
+<p>For a student thinking about long term income, this suggests that software engineering provides a relatively stable and broadly accessible path to high earnings. When our group compares these results to the esports side of the project, the contrast in concentration and stability will help highlight how different the financial realities are between these two career choices.</p>
+</section>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
